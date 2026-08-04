@@ -27,9 +27,12 @@
   var navToggle = document.querySelector('.nav-toggle');
 
   if (header && navToggle) {
+    var navToggleLabel = navToggle.querySelector('.sr-only');
+
     navToggle.addEventListener('click', function () {
       var open = header.classList.toggle('nav-open');
       navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (navToggleLabel) navToggleLabel.textContent = open ? '關閉主選單' : '開啟主選單';
     });
 
     // Esc 關閉選單並將焦點還給按鈕
@@ -37,6 +40,7 @@
       if (e.key === 'Escape' && header.classList.contains('nav-open')) {
         header.classList.remove('nav-open');
         navToggle.setAttribute('aria-expanded', 'false');
+        if (navToggleLabel) navToggleLabel.textContent = '開啟主選單';
         navToggle.focus();
       }
     });
@@ -46,6 +50,7 @@
       if (header.classList.contains('nav-open') && !header.contains(e.target)) {
         header.classList.remove('nav-open');
         navToggle.setAttribute('aria-expanded', 'false');
+        if (navToggleLabel) navToggleLabel.textContent = '開啟主選單';
       }
     });
   }
@@ -85,17 +90,28 @@
   var status = document.getElementById('demo-status');
   var statusTimer = null;
 
+  var showDemoStatus = function (message) {
+    if (!status) return;
+    status.textContent = message;
+    if (statusTimer) clearTimeout(statusTimer);
+    statusTimer = setTimeout(function () {
+      status.textContent = '';
+    }, 5000);
+  };
+
   document.addEventListener('click', function (e) {
+    var unavailable = e.target.closest('[data-unavailable]');
+    if (unavailable) {
+      e.preventDefault();
+      showDemoStatus(unavailable.getAttribute('data-unavailable'));
+      return;
+    }
+
     var link = e.target.closest('a[href="#"]');
     if (!link) return;
     e.preventDefault();
-    if (status) {
-      var label = link.getAttribute('aria-label') || link.textContent.trim();
-      status.textContent = '此為靜態 Demo：「' + label + '」功能將於正式版提供。';
-      if (statusTimer) clearTimeout(statusTimer);
-      statusTimer = setTimeout(function () {
-        status.textContent = '';
-      }, 4000);
-    }
+    var label = link.getAttribute('aria-label') || link.textContent.trim();
+    showDemoStatus('「' + label + '」內容尚待主辦單位提供。');
   });
+
 })();

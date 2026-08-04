@@ -1,31 +1,31 @@
 /* ==========================================================================
    AI 競賽活動網站 — 主樣式表
-   依據：AI競賽_初步視覺規劃與設計規範 v0.1
+   依據：2026 神盾盃邀請卡／宣傳海報與網站需求簡報
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
    1. Design Tokens
    -------------------------------------------------------------------------- */
 :root {
-  /* 色彩（深松綠折衷版：藍綠基底＋青綠科技高亮＋少量軍綠點綴） */
-  --color-ink-950: #081411;   /* 深松綠黑：Hero／頁尾背景 */
-  --color-ink-900: #0D2019;   /* 深松綠：深色區塊、導覽列 */
-  --color-ink-800: #173427;   /* 松綠：卡片與深色層次 */
-  --color-surface: #F4F7F4;   /* 淺灰綠白：主要淺色背景 */
+  /* 色彩（取自正式邀請卡／宣傳海報：深海軍藍＋訊號青綠＋任務琥珀） */
+  --color-ink-950: #061522;
+  --color-ink-900: #0A2030;
+  --color-ink-800: #153A53;
+  --color-surface: #F2F7F8;
   --color-white: #FFFFFF;
-  --color-text: #14261D;
-  --color-text-muted: #4F6156;
-  --color-line: #D7E0D9;
-  --color-cyan: #42E0D0;      /* 青綠科技高亮（深色背景限定） */
-  --color-blue: #2E6B50;      /* 松綠：連結、次要按鈕 */
-  --color-amber: #F4B740;
-  --color-success: #147D64;
+  --color-text: #102A3A;
+  --color-text-muted: #526A77;
+  --color-line: #D3E0E5;
+  --color-cyan: #45D9D0;
+  --color-blue: #0B6573;
+  --color-amber: #FFB82E;
+  --color-success: #0B7968;
   --color-danger: #B42318;
 
   /* 深色背景上的文字 */
-  --color-text-on-dark: #E9F1EC;
-  --color-text-muted-on-dark: #9EB3A8;
-  --color-line-on-dark: rgba(215, 224, 217, 0.18);
+  --color-text-on-dark: #F3F7F8;
+  --color-text-muted-on-dark: #C2D1D5;
+  --color-line-on-dark: rgba(167, 219, 224, 0.2);
 
   /* 字體 */
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont,
@@ -279,7 +279,7 @@ a:hover {
 }
 
 .site-header.is-scrolled {
-  background: rgba(13, 32, 25, 0.92);
+  background: rgba(6, 21, 34, 0.94);
   backdrop-filter: blur(8px);
   border-block-end-color: var(--color-line-on-dark);
 }
@@ -405,13 +405,16 @@ a:hover {
   font-weight: 700;
   text-decoration: none;
   cursor: pointer;
+  letter-spacing: 0.01em;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   transition: background-color var(--transition-fast), color var(--transition-fast),
-    border-color var(--transition-fast), transform var(--transition-fast);
+    border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .btn:hover,
 .btn:focus-visible {
   transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1.25rem rgba(6, 21, 34, 0.16);
 }
 
 /* 深色背景上的主按鈕：青綠底＋深色字 */
@@ -423,6 +426,7 @@ a:hover {
 .btn--primary:hover,
 .btn--primary:focus-visible {
   background: #6BE8DB;
+  box-shadow: 0 0.65rem 1.5rem rgba(69, 217, 208, 0.22);
 }
 
 /* 淺色背景上的主按鈕：深藍底＋白字 */
@@ -438,8 +442,8 @@ a:hover {
 
 /* 次要按鈕：透明底＋1px 邊框 */
 .btn--secondary {
-  background: transparent;
-  border-color: var(--color-line-on-dark);
+  background: rgba(6, 21, 34, 0.38);
+  border-color: rgba(194, 209, 213, 0.48);
   color: var(--color-text-on-dark);
 }
 
@@ -532,9 +536,15 @@ a:hover {
 }
 
 .hero__title {
-  font-size: clamp(2.5rem, 5vw, 5.5rem);
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
   line-height: 1.15;
   letter-spacing: 0.01em;
+  text-wrap: balance;
+  max-inline-size: 13.5em;
+}
+
+.hero__title-keep {
+  white-space: nowrap;
 }
 
 .hero__subtitle {
@@ -542,6 +552,7 @@ a:hover {
   font-size: clamp(1rem, 1.5vw, 1.25rem);
   color: var(--color-text-muted-on-dark);
   max-width: 34em;
+  line-height: 1.75;
 }
 
 .hero__dates {
@@ -552,7 +563,7 @@ a:hover {
   padding: var(--space-4) var(--space-6);
   border: 1px solid var(--color-line-on-dark);
   border-radius: var(--radius-card);
-  background: rgba(13, 32, 25, 0.6);
+  background: rgba(6, 21, 34, 0.72);
   inline-size: fit-content;
 }
 
@@ -582,11 +593,10 @@ a:hover {
   margin-block-start: var(--space-8);
 }
 
-/* 數位迷彩裝飾條：只作局部點綴，不作整頁背景（規範 1.3） */
+/* 正式視覺中的青綠識別線 */
 .camo-strip {
-  block-size: 6px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='6'%3E%3Crect width='96' height='6' fill='%230D2019'/%3E%3Crect x='0' width='16' height='6' fill='%23204636'/%3E%3Crect x='24' width='12' height='6' fill='%232E6B50'/%3E%3Crect x='44' width='10' height='6' fill='%23173427'/%3E%3Crect x='60' width='14' height='6' fill='%23285A44'/%3E%3Crect x='80' width='8' height='6' fill='%232E6B50'/%3E%3C/svg%3E");
-  background-size: 96px 6px;
+  block-size: 5px;
+  background: var(--color-cyan);
 }
 
 /* Hero／page-hero 背景照片（含深色遮罩，確保標題與 CTA 可讀） */
@@ -604,12 +614,20 @@ a:hover {
   object-fit: cover;
 }
 
-.hero__photo::after,
+.hero__photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(6, 21, 34, 0.94) 0%, rgba(6, 21, 34, 0.78) 58%, rgba(6, 21, 34, 0.56) 100%),
+    linear-gradient(180deg, rgba(6, 21, 34, 0.24), rgba(6, 21, 34, 0.88));
+}
+
 .page-hero__photo::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.82));
+  background: linear-gradient(180deg, rgba(6, 21, 34, 0.64), rgba(6, 21, 34, 0.9));
 }
 
 .hero__visual {
@@ -617,8 +635,13 @@ a:hover {
   justify-self: center;
 }
 
-.hero__visual svg {
-  inline-size: min(100%, 420px);
+.hero__visual img {
+  inline-size: min(100%, 390px);
+  max-block-size: 42rem;
+  object-fit: contain;
+  border: 1px solid rgba(69, 217, 208, 0.52);
+  border-radius: var(--radius-container);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.32);
 }
 
 /* 內頁 page hero（淺量版） */
@@ -663,6 +686,7 @@ a:hover {
   margin-block-start: var(--space-4);
   color: var(--color-text-muted-on-dark);
   max-width: 60ch;
+  line-height: 1.75;
 }
 
 /* --------------------------------------------------------------------------
@@ -952,7 +976,12 @@ a:hover {
   padding-inline: var(--space-4);
   border: 1px solid var(--color-blue);
   border-radius: var(--radius-control);
+  background: transparent;
+  color: var(--color-blue);
+  font-family: inherit;
+  font-size: 0.9375rem;
   text-decoration: none;
+  cursor: pointer;
   transition: background-color var(--transition-fast);
 }
 
@@ -1201,7 +1230,7 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   14. 系統入口預覽（登入卡）
+   14. 系統入口預覽（免帳密入口）
    -------------------------------------------------------------------------- */
 .portal-preview {
   display: grid;
@@ -1209,24 +1238,75 @@ a:hover {
   align-items: center;
 }
 
-.login-card {
-  background: var(--color-ink-800);
-  border: 1px solid var(--color-line-on-dark);
+.portal-preview__list {
+  display: grid;
+  gap: var(--space-3);
+  padding: 0;
+  color: var(--color-text-muted-on-dark);
+  font-size: 0.9375rem;
+  list-style: none;
+}
+
+.portal-preview__list li {
+  position: relative;
+  padding-inline-start: var(--space-6);
+}
+
+.portal-preview__list li::before {
+  content: "//";
+  position: absolute;
+  inset-inline-start: 0;
+  color: var(--color-cyan);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.portal-entry-card {
+  background: linear-gradient(145deg, var(--color-ink-800), rgba(10, 32, 48, 0.94));
+  border: 1px solid rgba(69, 217, 208, 0.38);
+  border-block-start: 4px solid var(--color-cyan);
   border-radius: var(--radius-container);
   padding: clamp(var(--space-6), 4vw, var(--space-8));
-  max-inline-size: 26rem;
+  max-inline-size: 29rem;
   inline-size: 100%;
+  box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.22);
 }
 
-.login-card__title {
+.portal-entry-card__eyebrow {
+  color: var(--color-cyan);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  margin-block-end: var(--space-3);
+}
+
+.portal-entry-card__title {
   color: var(--color-text-on-dark);
-  font-size: 1.25rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
-.login-card__desc {
+.portal-entry-card__desc {
   color: var(--color-text-muted-on-dark);
-  font-size: 0.875rem;
-  margin-block-start: var(--space-1);
+  margin-block-start: var(--space-3);
+}
+
+.portal-entry-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-block-start: var(--space-6);
+}
+
+.portal-entry-card__actions .btn {
+  flex: 1 1 10rem;
+}
+
+.portal-entry-card__note {
+  margin-block-start: var(--space-4);
+  padding-block-start: var(--space-4);
+  border-block-start: 1px solid var(--color-line-on-dark);
+  color: var(--color-text-muted-on-dark);
+  font-size: 0.8125rem;
 }
 
 .field {
@@ -1290,6 +1370,481 @@ a:hover {
   color: var(--color-cyan);
 }
 
+.text-button {
+  padding: 0;
+  min-block-size: 44px;
+  border: 0;
+  background: transparent;
+  color: var(--color-cyan);
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   14b. 正式視覺素材
+   -------------------------------------------------------------------------- */
+.official-assets {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.official-asset {
+  overflow: hidden;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-container);
+}
+
+.official-asset__preview {
+  display: block;
+  background: var(--color-ink-950);
+}
+
+.official-asset__preview img {
+  inline-size: 100%;
+  aspect-ratio: 1080 / 1527;
+  object-fit: contain;
+}
+
+.official-asset__body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-6);
+}
+
+.official-asset__body h3 {
+  font-size: 1.125rem;
+}
+
+.official-asset__eyebrow {
+  color: var(--color-blue);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  margin-block-end: var(--space-1);
+}
+
+/* --------------------------------------------------------------------------
+   14c. 參賽專區
+   -------------------------------------------------------------------------- */
+.portal-hero .page-hero__photo::after {
+  background: linear-gradient(90deg, rgba(6, 21, 34, 0.96), rgba(6, 21, 34, 0.68));
+}
+
+.portal-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-6);
+  margin-block-end: var(--space-8);
+}
+
+.portal-toolbar .section-lede {
+  margin-block-start: var(--space-2);
+}
+
+.portal-alert {
+  margin-block-end: var(--space-6);
+  padding: var(--space-4) var(--space-6);
+  border-radius: var(--radius-control);
+  border: 1px solid var(--color-line);
+  background: var(--color-white);
+  font-weight: 700;
+}
+
+.portal-alert--success {
+  border-inline-start: 4px solid var(--color-success);
+  color: var(--color-success);
+}
+
+.portal-alert--error {
+  border-inline-start: 4px solid var(--color-danger);
+  color: var(--color-danger);
+}
+
+.status-grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.status-card {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+  min-block-size: 9.5rem;
+  padding: var(--space-6);
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-block-start: 4px solid var(--color-cyan);
+  border-radius: var(--radius-card);
+  box-shadow: 0 0.75rem 2rem rgba(6, 21, 34, 0.06);
+}
+
+.status-card:nth-child(3) {
+  border-block-start-color: var(--color-amber);
+}
+
+.status-card__label,
+.result-card__label {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.status-card__value {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.status-card .tag {
+  justify-self: start;
+}
+
+progress {
+  inline-size: 100%;
+  block-size: 0.75rem;
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-line);
+  accent-color: var(--color-cyan);
+}
+
+progress::-webkit-progress-bar {
+  background: var(--color-line);
+  border-radius: var(--radius-pill);
+}
+
+progress::-webkit-progress-value {
+  background: var(--color-cyan);
+  border-radius: var(--radius-pill);
+}
+
+progress::-moz-progress-bar {
+  background: var(--color-cyan);
+  border-radius: var(--radius-pill);
+}
+
+.portal-local-nav {
+  display: flex;
+  gap: var(--space-2);
+  margin-block-start: var(--space-6);
+  padding: var(--space-2);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.72);
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.portal-local-nav a {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 44px;
+  padding-inline: var(--space-4);
+  color: var(--color-blue);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.portal-local-nav a:hover,
+.portal-local-nav a:focus-visible {
+  border-color: var(--color-blue);
+  background: var(--color-white);
+}
+
+.portal-layout {
+  display: grid;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.portal-panel-heading {
+  max-inline-size: 38rem;
+}
+
+.portal-panel-heading .section-lede {
+  line-height: 1.75;
+}
+
+.portal-panel {
+  padding: clamp(var(--space-6), 4vw, var(--space-8));
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-block-start: 4px solid var(--color-cyan);
+  border-radius: var(--radius-container);
+  box-shadow: 0 1rem 2.75rem rgba(6, 21, 34, 0.07);
+}
+
+.portal-panel--dark {
+  background: var(--color-ink-800);
+  border-color: var(--color-cyan) var(--color-line-on-dark) var(--color-line-on-dark);
+  color: var(--color-text-on-dark);
+  box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.18);
+}
+
+.portal-note {
+  margin-block-start: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-text);
+  background: rgba(255, 184, 46, 0.12);
+  border-inline-start: 3px solid var(--color-amber);
+  border-radius: var(--radius-control);
+  font-size: 0.875rem;
+}
+
+.form-grid {
+  display: grid;
+  gap: var(--space-4) var(--space-6);
+}
+
+.field--light {
+  margin-block-start: 0;
+}
+
+.field--light .field__label {
+  color: var(--color-text);
+}
+
+.field--light .field__input {
+  color: var(--color-text);
+  background: var(--color-white);
+  border-color: var(--color-line);
+}
+
+.field--light .field__input:hover {
+  border-color: var(--color-blue);
+}
+
+.field--light .field__input:focus-visible {
+  outline-color: var(--color-blue);
+  border-color: var(--color-blue);
+}
+
+.field--light .field__hint {
+  color: var(--color-text-muted);
+}
+
+.field__optional {
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+select.field__input {
+  appearance: auto;
+}
+
+.check-field {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-block-start: var(--space-6);
+  cursor: pointer;
+}
+
+.check-field input {
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  margin-block-start: 0.15rem;
+  accent-color: var(--color-blue);
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  margin-block-start: var(--space-8);
+}
+
+.form-status {
+  color: var(--color-success);
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.form-status--dark {
+  color: var(--color-cyan);
+}
+
+.upload-list {
+  display: grid;
+  gap: var(--space-3);
+  padding: 0;
+  list-style: none;
+}
+
+.upload-item {
+  display: grid;
+  gap: var(--space-4);
+  padding-block: var(--space-6);
+  border-block-end: 1px solid var(--color-line);
+}
+
+.upload-item:first-child {
+  padding-block-start: 0;
+}
+
+.upload-item:last-child {
+  padding-block-end: 0;
+  border-block-end: 0;
+}
+
+.upload-item.is-complete {
+  border-inline-start: 4px solid var(--color-success);
+  padding-inline-start: var(--space-4);
+}
+
+.upload-item__info {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.upload-item__number {
+  color: var(--color-blue);
+  font-family: var(--font-mono);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.upload-item__info h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 1.0625rem;
+}
+
+.upload-item__info p,
+.upload-item__status {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  margin-block-start: var(--space-1);
+}
+
+.upload-item__control {
+  display: grid;
+  gap: var(--space-2);
+  justify-items: start;
+}
+
+.file-picker {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 44px;
+  padding-inline: var(--space-4);
+  color: var(--color-blue);
+  background: var(--color-white);
+  border: 1px solid var(--color-blue);
+  border-radius: var(--radius-control);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.file-picker:hover,
+.file-picker:focus-within {
+  background: rgba(11, 101, 115, 0.08);
+}
+
+.file-picker:focus-within {
+  outline: 3px solid var(--color-blue);
+  outline-offset: 2px;
+}
+
+.file-picker input {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.file-picker.is-locked {
+  color: var(--color-text-muted);
+  border-color: var(--color-line);
+  background: var(--color-surface);
+  cursor: not-allowed;
+}
+
+.check-list {
+  display: grid;
+  gap: var(--space-3);
+  padding: 0;
+  margin-block-start: var(--space-6);
+  list-style: none;
+}
+
+.check-list li {
+  position: relative;
+  padding-inline-start: 1.75rem;
+  color: var(--color-text-muted-on-dark);
+}
+
+.check-list li::before {
+  content: "!";
+  position: absolute;
+  inset-inline-start: 0;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--color-amber);
+  border-radius: 50%;
+  color: var(--color-amber);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.check-list li.is-complete {
+  color: var(--color-text-on-dark);
+}
+
+.check-list li.is-complete::before {
+  content: "✓";
+  color: var(--color-cyan);
+  border-color: var(--color-cyan);
+}
+
+.result-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding: clamp(var(--space-6), 4vw, var(--space-8));
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-inline-start: 5px solid var(--color-amber);
+  border-radius: var(--radius-container);
+}
+
+.result-card h3 {
+  margin-block-start: var(--space-1);
+  font-size: 1.5rem;
+}
+
+.result-card h3 + p {
+  margin-block-start: var(--space-2);
+  color: var(--color-text-muted);
+  max-inline-size: 52ch;
+}
+
 /* --------------------------------------------------------------------------
    15. CTA 帶狀區
    -------------------------------------------------------------------------- */
@@ -1336,13 +1891,12 @@ a:hover {
   font-size: 0.9375rem;
 }
 
-/* 頁尾頂端的迷彩細條 */
+/* 頁尾頂端的青綠識別線 */
 .site-footer::before {
   content: "";
   display: block;
-  block-size: 6px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='6'%3E%3Crect width='96' height='6' fill='%230D2019'/%3E%3Crect x='0' width='16' height='6' fill='%23204636'/%3E%3Crect x='24' width='12' height='6' fill='%232E6B50'/%3E%3Crect x='44' width='10' height='6' fill='%23173427'/%3E%3Crect x='60' width='14' height='6' fill='%23285A44'/%3E%3Crect x='80' width='8' height='6' fill='%232E6B50'/%3E%3C/svg%3E");
-  background-size: 96px 6px;
+  block-size: 5px;
+  background: var(--color-cyan);
 }
 
 .site-footer__inner {
@@ -1491,6 +2045,43 @@ a:hover {
   }
 }
 
+@media (max-width: 29.999rem) {
+  .hero__inner {
+    padding-block: var(--space-12);
+  }
+
+  .hero__title {
+    font-size: clamp(2.2rem, 10.5vw, 2.5rem);
+    line-height: 1.13;
+  }
+
+  .hero__subtitle,
+  .page-hero__lede {
+    font-size: 1rem;
+  }
+
+  .hero__dates {
+    inline-size: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
+    padding: var(--space-4);
+  }
+
+  .hero__actions {
+    gap: var(--space-3);
+  }
+
+  .hero__actions .btn {
+    flex: 1 1 calc(50% - var(--space-3));
+    padding-inline: var(--space-4);
+  }
+
+  .portal-local-nav {
+    border-radius: var(--radius-card);
+  }
+}
+
 /* ~480px */
 @media (min-width: 30rem) {
   .gallery-grid {
@@ -1502,6 +2093,24 @@ a:hover {
 @media (min-width: 48rem) {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .official-assets,
+  .form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .form-grid__wide {
+    grid-column: 1 / -1;
+  }
+
+  .status-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .upload-item {
+    grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.7fr);
+    align-items: center;
   }
 
   .steps {
@@ -1525,6 +2134,10 @@ a:hover {
 
   .hero__visual {
     display: block;
+  }
+
+  .portal-layout {
+    grid-template-columns: minmax(16rem, 4fr) minmax(0, 8fr);
   }
 
   .card-grid--3 {

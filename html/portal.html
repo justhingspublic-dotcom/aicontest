@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="2026 神盾盃參賽專區：建立團隊資料、上傳文件、檢查缺件與查詢報名狀態。">
+  <title>參賽專區｜2026 神盾盃國際邀請賽暨國防 AI 競賽</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark" aria-hidden="true">AI</span>
+        <span class="brand__text">
+          <span>2026 神盾盃</span>
+          <small>國際邀請賽暨國防 AI 競賽</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/>
+        </svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/>
+        </svg>
+        <span class="sr-only">開啟主選單</span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="主選單">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="index.html">首頁</a></li>
+          <li><a class="site-nav__link" href="about.html">活動介紹與辦法</a></li>
+          <li><a class="site-nav__link" href="register.html">報名資訊</a></li>
+          <li><a class="site-nav__link" href="news.html">公告與成果</a></li>
+          <li><a class="site-nav__link" href="portal.html" aria-current="page">參賽專區</a></li>
+        </ul>
+        <a class="btn btn--primary btn--sm" href="#profile">繼續報名</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero portal-hero" aria-labelledby="page-title">
+      <div class="camo-strip" aria-hidden="true"></div>
+      <div class="page-hero__photo" aria-hidden="true">
+        <img src="../img/hero-earth.jpg" alt="" width="1920" height="1278" fetchpriority="high">
+      </div>
+      <div class="container page-hero__inner">
+        <span class="page-hero__eyebrow">PARTICIPANT PORTAL</span>
+        <h1 class="page-hero__title" id="page-title">參賽專區</h1>
+        <p class="page-hero__lede">依序完成團隊資料、報名文件與送出確認，隨時掌握目前進度與審查狀態。</p>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="dashboard-title">
+      <div class="container">
+        <div class="portal-toolbar">
+          <div>
+            <p class="section-eyebrow">DASHBOARD</p>
+            <h2 class="section-title" id="dashboard-title">團隊報名進度</h2>
+            <p class="section-lede" id="welcome-message">尚未建立團隊資料，請從第一步開始。</p>
+          </div>
+        </div>
+
+        <div class="portal-alert" id="portal-alert" role="status" aria-live="polite" hidden></div>
+
+        <div class="status-grid" aria-label="報名摘要">
+          <article class="status-card">
+            <p class="status-card__label">目前階段</p>
+            <p class="status-card__value">報名與書面審查</p>
+            <span class="tag tag--info">開放時間待公告</span>
+          </article>
+
+          <article class="status-card">
+            <p class="status-card__label">資料完成度</p>
+            <p class="status-card__value"><span id="completion-value">0</span>%</p>
+            <progress id="completion-progress" max="100" value="0">0%</progress>
+          </article>
+
+          <article class="status-card">
+            <p class="status-card__label">報名狀態</p>
+            <p class="status-card__value" id="submission-status">尚未送出</p>
+            <span class="tag tag--urgent" id="submission-tag">待完成</span>
+          </article>
+        </div>
+
+        <nav class="portal-local-nav" aria-label="參賽專區頁內導覽">
+          <a href="#profile">1. 團隊資料</a>
+          <a href="#documents">2. 文件上傳</a>
+          <a href="#review">3. 確認送出</a>
+          <a href="#result">4. 結果查詢</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="profile" aria-labelledby="profile-title">
+      <div class="container portal-layout">
+        <header class="portal-panel-heading">
+          <p class="section-eyebrow">STEP 01</p>
+          <h2 class="section-title" id="profile-title">建立團隊資料</h2>
+          <p class="section-lede">依需求簡報先收集團隊、參賽項目、機構與聯絡人資訊。</p>
+        </header>
+
+        <form class="portal-panel" id="team-profile-form">
+          <div class="form-grid">
+            <div class="field field--light">
+              <label class="field__label" for="team-name">團隊名稱 <span class="required" aria-hidden="true">*</span></label>
+              <input class="field__input" id="team-name" name="teamName" type="text" autocomplete="organization" required>
+            </div>
+
+            <div class="field field--light">
+              <label class="field__label" for="track">參賽項目 <span class="required" aria-hidden="true">*</span></label>
+              <select class="field__input" id="track" name="track" required>
+                <option value="">請選擇</option>
+                <option>神盾盃國際邀請賽｜AI 資安攻防</option>
+                <option>人工智慧用於國防系統｜AI × 國防應用</option>
+                <option>AI 研討會</option>
+                <option>AI 飛行員擂台賽</option>
+              </select>
+            </div>
+
+            <div class="field field--light">
+              <label class="field__label" for="organization-type">團隊身份別 <span class="required" aria-hidden="true">*</span></label>
+              <select class="field__input" id="organization-type" name="organizationType" required>
+                <option value="">請選擇</option>
+                <option>企業</option>
+                <option>法人</option>
+                <option>學研機構</option>
+                <option>其他團體</option>
+                <option>個人</option>
+              </select>
+            </div>
+
+            <div class="field field--light">
+              <label class="field__label" for="organization-name">機構／團體名稱 <span class="required" aria-hidden="true">*</span></label>
+              <input class="field__input" id="organization-name" name="organizationName" type="text" autocomplete="organization" required>
+            </div>
+
+            <div class="field field--light">
+              <label class="field__label" for="proposal-name">提案名稱 <span class="required" aria-hidden="true">*</span></label>
+              <input class="field__input" id="proposal-name" name="proposalName" type="text" required>
+            </div>
+
+            <div class="field field--light">
+              <label class="field__label" for="tax-id">統一編號 <span class="field__optional">選填</span></label>
+              <input class="field__input" id="tax-id" name="taxId" type="text" inputmode="numeric">
+            </div>
+
+            <div class="field field--light">
+              <label class="field__label" for="contact-name">聯絡人 <span class="required" aria-hidden="true">*</span></label>
+              <input class="field__input" id="contact-name" name="contactName" type="text" autocomplete="name" required>
+            </div>
+
+            <div class="field field--light">
+              <label class="field__label" for="contact-phone">聯絡電話 <span class="required" aria-hidden="true">*</span></label>
+              <input class="field__input" id="contact-phone" name="contactPhone" type="tel" autocomplete="tel" inputmode="tel" required>
+            </div>
+
+            <div class="field field--light form-grid__wide">
+              <label class="field__label" for="contact-email">聯絡信箱 <span class="required" aria-hidden="true">*</span></label>
+              <input class="field__input" id="contact-email" name="contactEmail" type="email" autocomplete="email" inputmode="email" required>
+              <p class="field__hint">報名、缺件與審查結果通知將寄送至此信箱。</p>
+            </div>
+          </div>
+
+          <label class="check-field" for="profile-confirm">
+            <input id="profile-confirm" name="profileConfirm" type="checkbox" required>
+            <span>我確認上述資料可供本活動報名與聯繫使用。</span>
+          </label>
+
+          <div class="form-actions">
+            <button class="btn btn--primary-light" type="submit">儲存團隊資料</button>
+            <span class="form-status" id="profile-status" role="status" aria-live="polite"></span>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="documents" aria-labelledby="documents-title">
+      <div class="container portal-layout">
+        <header class="portal-panel-heading">
+          <p class="section-eyebrow">STEP 02</p>
+          <h2 class="section-title" id="documents-title">上傳報名文件</h2>
+          <p class="section-lede">單檔上限 300MB、最多 10 個檔案；截止日前可依規則更新指定文件。</p>
+          <p class="portal-note">展示模式目前只記錄檔名與大小，不會傳送實際檔案。</p>
+        </header>
+
+        <div class="portal-panel">
+          <ul class="upload-list" id="upload-list">
+            <li class="upload-item" data-document="registrationForm" data-required="true">
+              <div class="upload-item__info">
+                <span class="upload-item__number">01</span>
+                <div>
+                  <h3>報名表 <span class="tag tag--urgent">必繳</span></h3>
+                  <p>PDF；送出後不可任意替換。</p>
+                </div>
+              </div>
+              <div class="upload-item__control">
+                <label class="file-picker">選擇 PDF<input type="file" accept=".pdf,application/pdf" data-document-input="registrationForm"></label>
+                <p class="upload-item__status" data-document-status="registrationForm">尚未選擇檔案</p>
+              </div>
+            </li>
+
+            <li class="upload-item" data-document="consentForm" data-required="true">
+              <div class="upload-item__info">
+                <span class="upload-item__number">02</span>
+                <div>
+                  <h3>個資同意書 <span class="tag tag--urgent">必繳</span></h3>
+                  <p>PDF；簽署後上傳，送出後不可任意替換。</p>
+                </div>
+              </div>
+              <div class="upload-item__control">
+                <label class="file-picker">選擇 PDF<input type="file" accept=".pdf,application/pdf" data-document-input="consentForm"></label>
+                <p class="upload-item__status" data-document-status="consentForm">尚未選擇檔案</p>
+              </div>
+            </li>
+
+            <li class="upload-item" data-document="workIntro" data-required="true">
+              <div class="upload-item__info">
+                <span class="upload-item__number">03</span>
+                <div>
+                  <h3>作品介紹／提案簡報 <span class="tag tag--urgent">必繳</span></h3>
+                  <p>PDF；截止日前可重新選擇版本。</p>
+                </div>
+              </div>
+              <div class="upload-item__control">
+                <label class="file-picker">選擇 PDF<input type="file" accept=".pdf,application/pdf" data-document-input="workIntro"></label>
+                <p class="upload-item__status" data-document-status="workIntro">尚未選擇檔案</p>
+              </div>
+            </li>
+
+            <li class="upload-item" data-document="aiSchedule" data-required="true">
+              <div class="upload-item__info">
+                <span class="upload-item__number">04</span>
+                <div>
+                  <h3>AI 評測時間預約單 <span class="tag tag--urgent">必繳</span></h3>
+                  <p>PDF；截止日前可重新選擇版本。</p>
+                </div>
+              </div>
+              <div class="upload-item__control">
+                <label class="file-picker">選擇 PDF<input type="file" accept=".pdf,application/pdf" data-document-input="aiSchedule"></label>
+                <p class="upload-item__status" data-document-status="aiSchedule">尚未選擇檔案</p>
+              </div>
+            </li>
+
+            <li class="upload-item" data-document="apiSpec" data-required="true">
+              <div class="upload-item__info">
+                <span class="upload-item__number">05</span>
+                <div>
+                  <h3>API 介面規格說明書 <span class="tag tag--urgent">必繳</span></h3>
+                  <p>PDF；截止日前可重新選擇版本。</p>
+                </div>
+              </div>
+              <div class="upload-item__control">
+                <label class="file-picker">選擇 PDF<input type="file" accept=".pdf,application/pdf" data-document-input="apiSpec"></label>
+                <p class="upload-item__status" data-document-status="apiSpec">尚未選擇檔案</p>
+              </div>
+            </li>
+
+            <li class="upload-item" data-document="supportingFiles" data-required="false">
+              <div class="upload-item__info">
+                <span class="upload-item__number">06</span>
+                <div>
+                  <h3>其他審查資料 <span class="tag tag--info">選繳</span></h3>
+                  <p>PDF、7z、zip、rar；可複選，全部檔案合計最多 10 個。</p>
+                </div>
+              </div>
+              <div class="upload-item__control">
+                <label class="file-picker">選擇檔案<input type="file" accept=".pdf,.7z,.zip,.rar" multiple data-document-input="supportingFiles"></label>
+                <p class="upload-item__status" data-document-status="supportingFiles">尚未選擇檔案</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark" id="review" aria-labelledby="review-title">
+      <div class="container portal-layout">
+        <header class="portal-panel-heading">
+          <p class="section-eyebrow">STEP 03</p>
+          <h2 class="section-title" id="review-title">確認並送出報名</h2>
+          <p class="section-lede">系統會先檢查團隊資料與必繳文件，缺件時直接指出需要補上的項目。</p>
+        </header>
+
+        <div class="portal-panel portal-panel--dark">
+          <h3>送出前檢查</h3>
+          <ul class="check-list" id="submission-check-list">
+            <li data-check="profile">團隊基本資料尚未完成</li>
+            <li data-check="documents">必繳文件尚未完整</li>
+            <li data-check="deadline">報名截止時間待公告，正式時間以活動公告為準</li>
+          </ul>
+          <div class="form-actions">
+            <button class="btn btn--primary" id="submit-application" type="button">確認送出報名</button>
+            <span class="form-status form-status--dark" id="submission-message" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="result" aria-labelledby="result-title">
+      <div class="container portal-layout">
+        <header class="portal-panel-heading">
+          <p class="section-eyebrow">STEP 04</p>
+          <h2 class="section-title" id="result-title">階段結果查詢</h2>
+          <p class="section-lede">管理者公告書面審查結果後，參賽者可在此查看並接續上傳決賽資料。</p>
+        </header>
+
+        <article class="result-card">
+          <div>
+            <p class="result-card__label">書面審查結果</p>
+            <h3 id="review-result">尚未公告</h3>
+            <p id="review-result-note">完成並送出報名後，系統將顯示「審查中」；正式結果由活動管理者公告。</p>
+          </div>
+          <a class="btn btn--secondary-light" href="news.html">查看最新公告</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <a class="brand" href="index.html">
+          <span class="brand__mark" aria-hidden="true">AI</span>
+          <span class="brand__text">
+            <span>2026 神盾盃</span>
+            <small>主辦單位｜中山科學院</small>
+          </span>
+        </a>
+      </div>
+
+      <nav aria-label="頁尾選單">
+        <h2>SITEMAP</h2>
+        <ul>
+          <li><a href="index.html">首頁</a></li>
+          <li><a href="about.html">活動介紹與辦法</a></li>
+          <li><a href="register.html">報名資訊</a></li>
+          <li><a href="news.html">公告與成果</a></li>
+          <li><a href="portal.html">參賽專區</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h2>CONTACT</h2>
+        <ul>
+          <li>活動日期｜2026.11.07—08</li>
+          <li>決賽地點｜國立成功大學</li>
+          <li>聯絡窗口｜<span class="tbd">待公告</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container site-footer__bottom">
+      <p>© 2026 神盾盃國際邀請賽暨國防 AI 競賽。</p>
+      <p>活動與報名資訊以主辦單位正式公告為準。</p>
+    </div>
+  </footer>
+
+  <p id="demo-status" class="demo-status" role="status" aria-live="polite"></p>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/portal.js"></script>
+</body>
+</html>
