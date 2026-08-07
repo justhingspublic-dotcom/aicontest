@@ -185,7 +185,7 @@
 
         var data = new FormData(loginForm);
         if (String(data.get('email') || '').trim().toLowerCase() === 'admin') {
-          loginStatus.textContent = '管理者（admin）登入後將直接進入管理後台；後台屬工程端建置範圍。';
+          loginStatus.textContent = '管理者與評審請由後台系統登入；本頁供參賽者使用。';
           return;
         }
 
