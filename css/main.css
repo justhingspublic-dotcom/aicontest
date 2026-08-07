@@ -388,13 +388,17 @@ a:hover {
   border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
-/* 導覽列的官方盾徽:去白框、放大,作為站徽主角 */
-.site-header .brand__mark--logo {
-  background: transparent;
-  padding: 0;
-  border-radius: 0;
-  inline-size: 2.875rem;
-  block-size: auto;
+/* 導覽列官方橫式 lockup(盾徽+金屬字,由直式 919757 重組) */
+.brand__lockup {
+  display: block;
+  block-size: 3rem;
+  inline-size: auto;
+}
+
+@media (max-width: 30rem) {
+  .brand__lockup {
+    block-size: 2.5rem;
+  }
 }
 
 .brand__text {
