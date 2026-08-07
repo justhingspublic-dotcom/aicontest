@@ -647,14 +647,9 @@ a:hover {
   max-inline-size: min(100%, 96rem);
   block-size: auto;
   max-block-size: calc(100svh - var(--nav-clearance) - 8rem);
-  -webkit-mask-image:
-    linear-gradient(to right, transparent, #000 5%, #000 95%, transparent),
-    linear-gradient(to bottom, #000 90%, transparent);
-  -webkit-mask-composite: source-in;
-  mask-image:
-    linear-gradient(to right, transparent, #000 5%, #000 95%, transparent),
-    linear-gradient(to bottom, #000 90%, transparent);
-  mask-composite: intersect;
+  /* 橢圓溶解遮罩:中央(盾徽+標題)全實,四邊往雲海漸溶 */
+  -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 82%, transparent 97%);
+  mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 82%, transparent 97%);
 }
 
 .hero__kv-bar {
@@ -663,7 +658,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   gap: var(--space-4) var(--space-8);
-  padding-block: var(--space-5) clamp(var(--space-6), 4vw, var(--space-10));
+  padding-block: var(--space-5) clamp(var(--space-12), 6vw, var(--space-16));
 }
 
 .hero__kv-bar .hero__dates,
