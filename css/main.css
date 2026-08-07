@@ -647,9 +647,16 @@ a:hover {
   max-inline-size: min(100%, 96rem);
   block-size: auto;
   max-block-size: calc(100svh - var(--nav-clearance) - 8rem);
-  /* 圓角矩形卡呈現:原始比例不裁切,柔和陰影讓它安坐在雲海上 */
+  /* 圓角矩形溶解:水平×垂直羽化交集,四邊融入雲海、角落自然圓潤 */
   border-radius: clamp(12px, 1.5vw, 24px);
-  box-shadow: var(--shadow-md);
+  -webkit-mask-image:
+    linear-gradient(to right, transparent, #000 5%, #000 95%, transparent),
+    linear-gradient(to bottom, transparent, #000 6%, #000 93%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent, #000 5%, #000 95%, transparent),
+    linear-gradient(to bottom, transparent, #000 6%, #000 93%, transparent);
+  mask-composite: intersect;
 }
 
 .hero__kv-bar {
