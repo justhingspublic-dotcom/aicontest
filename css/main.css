@@ -3214,43 +3214,15 @@ input[type="file"].field__input::file-selector-button:hover {
 /* --------------------------------------------------------------------------
    19. 會員登入（展示模式）：導覽列入口、專區登入關卡與登入狀態
    -------------------------------------------------------------------------- */
-/* 導覽列 CTA：「登入」＋「馬上報名」整合為一顆分段膠囊 */
-.nav-cta {
-  display: inline-flex;
-  align-items: stretch;
-  background: var(--color-white);
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-pill);
-  overflow: hidden;
-}
-
-.nav-cta .btn {
-  border: 0;
-  border-radius: 0;
-}
-
-.nav-cta .btn:active {
-  transform: none;
-}
-
-.nav-cta .btn:focus-visible {
-  box-shadow: inset 0 0 0 2px rgba(18, 102, 194, 0.4);
-}
-
-.nav-cta .btn--secondary:hover,
-.nav-cta .btn--secondary:focus-visible {
-  background: var(--color-sky);
+/* 導覽列：「馬上報名」單顆膠囊 CTA，「登入」為其右側文字連結 */
+.site-nav > [data-auth-entry] {
+  margin-inline-start: calc(-1 * var(--space-4));
 }
 
 @media (max-width: 63.9375rem) {
-  .site-nav .nav-cta {
-    margin-block-start: var(--space-4);
-    inline-size: 100%;
-  }
-
-  .site-nav .nav-cta .btn {
-    flex: 1;
-    margin-block-start: 0;
+  .site-nav > [data-auth-entry] {
+    margin-inline-start: 0;
+    margin-block-start: var(--space-2);
   }
 }
 
