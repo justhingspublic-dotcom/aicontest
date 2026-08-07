@@ -85,23 +85,14 @@
             <div role="tabpanel" tabindex="0" id="login" aria-labelledby="tab-login">
               <form class="auth-form" id="login-form" novalidate>
                 <div class="field field--light">
-                  <label class="field__label" for="login-email">帳號（Email） <span class="required" aria-hidden="true">*</span></label>
-                  <input class="field__input" id="login-email" name="email" type="email" autocomplete="username" inputmode="email" required>
+                  <label class="field__label" for="login-email">帳號 <span class="required" aria-hidden="true">*</span></label>
+                  <input class="field__input" id="login-email" name="email" type="text" autocomplete="username" inputmode="email" placeholder="參賽者請輸入註冊 Email" required>
                 </div>
 
                 <div class="field field--light">
                   <label class="field__label" for="login-password">密碼 <span class="required" aria-hidden="true">*</span></label>
                   <input class="field__input" id="login-password" name="password" type="password" autocomplete="current-password" required>
-                </div>
-
-                <div class="field field--light">
-                  <label class="field__label" for="login-role">登入身分 <span class="required" aria-hidden="true">*</span></label>
-                  <select class="field__input" id="login-role" name="role">
-                    <option value="participant" selected>參賽者</option>
-                    <option value="judge">評審委員</option>
-                    <option value="admin">活動管理者</option>
-                  </select>
-                  <p class="field__hint" id="login-role-hint">參賽者可自行註冊帳號；登入後於參賽者專區完成報名與繳件。</p>
+                  <p class="field__hint">系統依帳號自動判別身分；評審與管理者請以主辦單位提供之帳號登入。</p>
                 </div>
 
                 <button class="btn btn--primary-light" type="submit">登入</button>

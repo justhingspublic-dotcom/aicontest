@@ -175,34 +175,20 @@
       });
     }
 
-    /* 登入 */
+    /* 登入：身分由帳號決定（admin＝管理者、評委帳號由 admin 建立、其餘為參賽者） */
     if (loginForm) {
       var loginStatus = document.getElementById('login-status');
-      var roleSelect = document.getElementById('login-role');
-      var roleHint = document.getElementById('login-role-hint');
-      var ROLE_HINTS = {
-        participant: '參賽者可自行註冊帳號；登入後於參賽者專區完成報名與繳件。',
-        judge: '評審委員帳號由主辦單位開通，不開放自行註冊；其閱卷工作區屬後台系統建置範圍。',
-        admin: '活動管理者帳號由主辦單位設定；後台管理介面屬後台系統建置範圍。'
-      };
-
-      if (roleSelect && roleHint) {
-        roleSelect.addEventListener('change', function () {
-          roleHint.textContent = ROLE_HINTS[roleSelect.value] || '';
-        });
-      }
 
       loginForm.addEventListener('submit', function (event) {
         event.preventDefault();
         if (!loginForm.reportValidity()) return;
 
-        var role = roleSelect ? roleSelect.value : 'participant';
-        if (role !== 'participant') {
-          loginStatus.textContent = '評審委員與活動管理者帳號由主辦單位開通，請由對應的後台系統登入。';
+        var data = new FormData(loginForm);
+        if (String(data.get('email') || '').trim().toLowerCase() === 'admin') {
+          loginStatus.textContent = '管理者（admin）登入後將直接進入管理後台；後台屬工程端建置範圍。';
           return;
         }
 
-        var data = new FormData(loginForm);
         var result = DemoAuth.login(data.get('email'), data.get('password'));
         if (result.ok) {
           window.location.href = nextTarget;
