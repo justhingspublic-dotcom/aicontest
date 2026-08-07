@@ -2691,6 +2691,11 @@ input[type="file"].field__input::file-selector-button:hover {
   align-items: center;
 }
 
+/* 卡片內按鈕列固定貼齊底部，同列卡片對齊不受文字行數影響 */
+.card > .card__actions {
+  margin-block-start: auto;
+}
+
 .external-hint {
   font-size: 0.8125rem;
   color: var(--color-text-muted);
@@ -3408,5 +3413,59 @@ input[type="file"].field__input::file-selector-button:hover {
 
   .auth-split__visual {
     min-block-size: 12rem;
+  }
+}
+
+/* 外部報名平台確認彈窗（即將離開本站） */
+.external-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: var(--space-6);
+  background: rgba(10, 43, 77, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.external-modal[hidden] {
+  display: none;
+}
+
+.external-modal__card {
+  background: var(--color-white);
+  border-radius: var(--radius-container);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-8);
+  max-inline-size: 26rem;
+}
+
+.external-modal__card h2 {
+  font-size: 1.25rem;
+  margin-block-end: var(--space-3);
+}
+
+.external-modal__desc {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-block-end: var(--space-6);
+}
+
+.external-modal__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .external-modal:not([hidden]) .external-modal__card {
+    animation: external-modal-pop 200ms ease-out;
+  }
+}
+
+@keyframes external-modal-pop {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
   }
 }

@@ -186,4 +186,79 @@
     showDemoStatus('「' + label + '」內容尚待主辦單位提供。');
   });
 
+  /* ------------------------------------------------------------------
+     外部報名平台確認彈窗：external 路由（SurveyCake／Kaggle）的報名
+     連結先確認「即將離開本站」，繼續才另開新分頁。
+     ------------------------------------------------------------------ */
+  var externalModal = null;
+  var externalReturnFocus = null;
+
+  function ensureExternalModal() {
+    if (externalModal) return externalModal;
+
+    externalModal = document.createElement('div');
+    externalModal.className = 'external-modal';
+    externalModal.hidden = true;
+    externalModal.innerHTML =
+      '<div class="external-modal__card" role="dialog" aria-modal="true" aria-labelledby="external-modal-title">' +
+        '<h2 id="external-modal-title">即將離開本站</h2>' +
+        '<p class="external-modal__desc" data-modal-desc></p>' +
+        '<div class="external-modal__actions">' +
+          '<a class="btn btn--primary-light" data-modal-continue target="_blank" rel="noopener noreferrer" href="#">繼續前往</a>' +
+          '<button class="btn btn--secondary" type="button" data-modal-cancel>取消</button>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(externalModal);
+
+    externalModal.addEventListener('click', function (e) {
+      if (e.target === externalModal || e.target.closest('[data-modal-cancel]')) {
+        closeExternalModal();
+      } else if (e.target.closest('[data-modal-continue]')) {
+        closeExternalModal();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !externalModal.hidden) closeExternalModal();
+    });
+
+    return externalModal;
+  }
+
+  function openExternalModal(route, trigger) {
+    var modal = ensureExternalModal();
+    var platform = String(route.platform || '外部平台').split('（')[0];
+    modal.querySelector('[data-modal-desc]').textContent =
+      '「' + route.name + '」的報名由 ' + platform + ' 受理，將以新分頁開啟外部平台網站；' +
+      '於外部平台填寫的資料依該平台規範處理。';
+    modal.querySelector('[data-modal-continue]').setAttribute('href', route.url);
+    externalReturnFocus = trigger;
+    modal.hidden = false;
+    document.documentElement.style.overflow = 'hidden';
+    modal.querySelector('[data-modal-continue]').focus();
+  }
+
+  function closeExternalModal() {
+    if (!externalModal || externalModal.hidden) return;
+    externalModal.hidden = true;
+    document.documentElement.style.overflow = '';
+    if (externalReturnFocus) {
+      externalReturnFocus.focus();
+      externalReturnFocus = null;
+    }
+  }
+
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[data-register-route]');
+    if (!link) return;
+    if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+
+    var routes = (window.SITE_CONFIG || {}).registrationRoutes || {};
+    var route = routes[link.getAttribute('data-register-route')];
+    if (!route || !route.external || !route.url) return;
+
+    e.preventDefault();
+    openExternalModal(route, link);
+  });
+
 })();
