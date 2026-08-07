@@ -647,9 +647,9 @@ a:hover {
   max-inline-size: min(100%, 96rem);
   block-size: auto;
   max-block-size: calc(100svh - var(--nav-clearance) - 8rem);
-  /* 橢圓溶解遮罩:中央(盾徽+標題)全實,四邊往雲海漸溶 */
-  -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 90%, transparent 100%);
-  mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 90%, transparent 100%);
+  /* 圓角矩形卡呈現:原始比例不裁切,柔和陰影讓它安坐在雲海上 */
+  border-radius: clamp(12px, 1.5vw, 24px);
+  box-shadow: var(--shadow-md);
 }
 
 .hero__kv-bar {
