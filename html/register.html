@@ -47,6 +47,7 @@
           <li><a class="site-nav__link" href="sponsors.html">贊助與參展</a></li>
           <li><a class="site-nav__link" href="transport-contact.html">交通與聯絡資訊</a></li>
         </ul>
+        <a class="btn btn--secondary btn--sm" href="account.html" data-auth-entry>登入</a>
         <a class="btn btn--primary btn--sm" href="register.html">馬上報名</a>
       </nav>
     </div>
@@ -120,7 +121,7 @@
             <p class="card__body">RAG 國防知識問答系統；遠端 AI 評測＋現場離線實測。</p>
             <p class="route-card__platform">報名平台｜活動官網</p>
             <div class="card__actions">
-              <a class="btn btn--primary-light btn--sm" href="portal.html#profile" data-register-route="llm">由官網報名</a>
+              <a class="btn btn--primary-light btn--sm" href="portal.html#profile" data-register-route="llm" data-auth-required>由官網報名</a>
               <a class="card__link" href="competition.html#ai-seminar">競賽說明</a>
             </div>
             <p class="external-hint">需提交 AI 評測時間預約單與 API 介面規格說明書。</p>
@@ -131,7 +132,7 @@
             <p class="card__body">JSBSim 模擬空戰：1v1 纏鬥、5 戰 3 勝、全程模型自主。</p>
             <p class="route-card__platform">報名平台｜活動官網</p>
             <div class="card__actions">
-              <a class="btn btn--primary-light btn--sm" href="portal.html#profile" data-register-route="aiPilot">由官網報名</a>
+              <a class="btn btn--primary-light btn--sm" href="portal.html#profile" data-register-route="aiPilot" data-auth-required>由官網報名</a>
               <a class="card__link" href="competition.html#ai-pilot">競賽說明</a>
             </div>
           </article>
@@ -141,7 +142,7 @@
             <p class="card__body">AI 應用於國防領域的創新提案；決賽簡報＋實體陳展。</p>
             <p class="route-card__platform">報名平台｜活動官網</p>
             <div class="card__actions">
-              <a class="btn btn--primary-light btn--sm" href="portal.html#profile" data-register-route="defenseAi">由官網報名</a>
+              <a class="btn btn--primary-light btn--sm" href="portal.html#profile" data-register-route="defenseAi" data-auth-required>由官網報名</a>
               <a class="card__link" href="competition.html#defense-ai">競賽說明</a>
             </div>
           </article>
@@ -155,10 +156,19 @@
         <header class="section-header reveal">
           <p class="section-eyebrow">PROCESS</p>
           <h2 class="section-title" id="flow-title">官網報名流程</h2>
-          <p class="section-lede">適用由活動官網報名之項目；外部平台（Kaggle、表單）依該平台流程辦理。</p>
+          <p class="section-lede">
+            適用由活動官網報名之項目：需先註冊帳號並登入後才能報名；
+            外部平台（Kaggle、表單）依該平台流程辦理。
+          </p>
         </header>
 
         <ol class="steps">
+          <li class="step reveal">
+            <div>
+              <h3 class="step__title">註冊帳號並登入</h3>
+              <p class="step__desc">首次使用請先<a href="account.html#signup">註冊帳號</a>；註冊完成後重新登入。</p>
+            </div>
+          </li>
           <li class="step reveal">
             <div>
               <h3 class="step__title">選擇競賽項目</h3>
@@ -225,10 +235,11 @@
             <li>不符</li>
           </ul>
           <p style="margin-block-start: var(--space-4);">
-            查詢時以報名編號、聯絡人電子郵件與驗證資訊確認身分；正式驗證方式將於報名系統建置時確認。
+            登入帳號後即可於參賽者專區查詢報名狀態並辦理補件；
+            以報名編號輔助查詢之方式以正式系統公告為準。
           </p>
           <div class="card__actions">
-            <a class="btn btn--secondary" href="portal.html#result">前往查詢狀態</a>
+            <a class="btn btn--secondary" href="portal.html#result" data-auth-required>前往查詢狀態</a>
           </div>
         </div>
       </div>
@@ -277,11 +288,12 @@
         <article class="portal-entry-card reveal" aria-labelledby="entry-title">
           <p class="portal-entry-card__eyebrow">PORTAL ENTRY</p>
           <h3 class="portal-entry-card__title" id="entry-title">進入參賽者專區</h3>
-          <p class="portal-entry-card__desc">建立團隊資料並開始報名；需要續填時再次進入即可回到目前進度。</p>
+          <p class="portal-entry-card__desc">登入後建立團隊資料並開始報名；需要續填時再次登入即可回到目前進度。</p>
           <div class="portal-entry-card__actions">
-            <a class="btn btn--primary" href="portal.html#profile">開始報名</a>
+            <a class="btn btn--primary" href="portal.html#profile" data-auth-required>開始報名</a>
+            <a class="btn btn--secondary-light" href="account.html#signup">註冊帳號</a>
           </div>
-          <p class="portal-entry-card__note">正式帳號／驗證機制待確認，展示版以瀏覽器本機保存進度。</p>
+          <p class="portal-entry-card__note">依主辦確認流程：先註冊帳號、登入後才能報名。展示版以瀏覽器本機模擬帳號與進度。</p>
         </article>
       </div>
     </section>
@@ -337,5 +349,6 @@
 
   <script src="../js/site-config.js"></script>
   <script src="../js/main.js"></script>
+  <script src="../js/auth.js"></script>
 </body>
 </html>

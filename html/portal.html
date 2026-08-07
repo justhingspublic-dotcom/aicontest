@@ -47,6 +47,7 @@
           <li><a class="site-nav__link" href="sponsors.html">贊助與參展</a></li>
           <li><a class="site-nav__link" href="transport-contact.html">交通與聯絡資訊</a></li>
         </ul>
+        <a class="btn btn--secondary btn--sm" href="account.html" data-auth-entry>登入</a>
         <a class="btn btn--primary btn--sm" href="register.html">馬上報名</a>
       </nav>
     </div>
@@ -61,19 +62,46 @@
         <span class="page-hero__eyebrow">PARTICIPANT PORTAL</span>
         <h1 class="page-hero__title" id="page-title">參賽者專區</h1>
         <p class="page-hero__lede">
-          適用由活動官網報名之項目。依序完成團隊資料、報名文件與送出確認；
+          適用由活動官網報名之項目。登入後依序完成團隊資料、報名文件與送出確認；
           通過資格檢核後，於繳交期間內上傳比賽檔案。
         </p>
       </div>
     </section>
 
-    <section class="section section--tight" aria-labelledby="dashboard-title">
+    <!-- 未登入：依主辦確認流程（先註冊、登入後才能報名）顯示登入關卡 -->
+    <section class="section" id="portal-auth-gate" aria-labelledby="gate-title" hidden>
+      <div class="container">
+        <div class="locked-panel">
+          <span class="locked-panel__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+            </svg>
+          </span>
+          <div>
+            <h2 id="gate-title">請先登入</h2>
+            <p style="margin-block: var(--space-2) var(--space-4);">
+              由活動官網報名之項目需先註冊帳號；註冊完成後重新登入，即可開始報名。
+            </p>
+            <div class="card__actions">
+              <a class="btn btn--primary-light" href="account.html?next=portal.html%23profile">會員登入</a>
+              <a class="btn btn--secondary" href="account.html#signup">註冊帳號</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="dashboard-title" data-requires-auth>
       <div class="container">
         <div class="portal-toolbar">
           <div>
             <p class="section-eyebrow">DASHBOARD</p>
             <h2 class="section-title" id="dashboard-title">團隊報名進度</h2>
             <p class="section-lede" id="welcome-message">尚未建立團隊資料，請從第一步開始。</p>
+          </div>
+          <div class="portal-session" id="portal-session" hidden>
+            <span id="portal-session-email"></span>
+            <button class="btn btn--secondary btn--sm" id="portal-logout" type="button">登出</button>
           </div>
         </div>
 
@@ -109,7 +137,7 @@
       </div>
     </section>
 
-    <section class="section section--alt" id="profile" aria-labelledby="profile-title">
+    <section class="section section--alt" id="profile" aria-labelledby="profile-title" data-requires-auth>
       <div class="container portal-layout">
         <header class="portal-panel-heading">
           <p class="section-eyebrow">STEP 01</p>
@@ -199,7 +227,7 @@
       </div>
     </section>
 
-    <section class="section" id="documents" aria-labelledby="documents-title">
+    <section class="section" id="documents" aria-labelledby="documents-title" data-requires-auth>
       <div class="container portal-layout">
         <header class="portal-panel-heading">
           <p class="section-eyebrow">STEP 02</p>
@@ -300,7 +328,7 @@
       </div>
     </section>
 
-    <section class="section section--dark" id="review" aria-labelledby="review-title">
+    <section class="section section--dark" id="review" aria-labelledby="review-title" data-requires-auth>
       <div class="container portal-layout">
         <header class="portal-panel-heading">
           <p class="section-eyebrow">STEP 03</p>
@@ -323,7 +351,7 @@
       </div>
     </section>
 
-    <section class="section section--alt" id="result" aria-labelledby="result-title">
+    <section class="section section--alt" id="result" aria-labelledby="result-title" data-requires-auth>
       <div class="container portal-layout">
         <header class="portal-panel-heading">
           <p class="section-eyebrow">STEP 04</p>
@@ -358,7 +386,7 @@
       </div>
     </section>
 
-    <section class="section" id="submission" aria-labelledby="submission-title">
+    <section class="section" id="submission" aria-labelledby="submission-title" data-requires-auth>
       <div class="container portal-layout">
         <header class="portal-panel-heading">
           <p class="section-eyebrow">STEP 05</p>
@@ -484,6 +512,7 @@
 
   <script src="../js/site-config.js"></script>
   <script src="../js/main.js"></script>
+  <script src="../js/auth.js"></script>
   <script src="../js/portal.js"></script>
 </body>
 </html>

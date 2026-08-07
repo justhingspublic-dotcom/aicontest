@@ -3201,3 +3201,51 @@ input[type="file"].field__input::file-selector-button:hover {
     transform: none;
   }
 }
+
+/* --------------------------------------------------------------------------
+   19. 會員登入（展示模式）：導覽列入口、專區登入關卡與登入狀態
+   -------------------------------------------------------------------------- */
+/* 導覽列「登入」與「馬上報名」兩鈕間距收窄一點 */
+.site-nav [data-auth-entry] {
+  margin-inline-end: calc(-1 * var(--space-3));
+}
+
+@media (max-width: 63.9375rem) {
+  .site-nav [data-auth-entry] {
+    margin-inline-end: 0;
+  }
+}
+
+/* 文內分頁跳轉按鈕（帳號頁「註冊帳號」） */
+.link-button {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: var(--color-blue);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+
+.link-button:hover,
+.link-button:focus-visible {
+  color: var(--color-blue-deep);
+}
+
+/* 專區工具列的登入狀態與登出 */
+.portal-session {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+/* 參賽者專區登入關卡標題（沿用鎖定面板，但標題需為深色主文字） */
+#portal-auth-gate h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--color-text);
+}
