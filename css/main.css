@@ -2863,15 +2863,33 @@ input[type="file"].field__input::file-selector-button:hover {
   position: sticky;
   inset-block-start: var(--nav-clearance);
   z-index: 40;
-  background: var(--color-white);
-  border-block-end: 1px solid var(--color-line);
+  pointer-events: none;
 }
 
+/* 分頁列=導覽膠囊的同語言膠囊條:吸頂時浮在內容上,而非全幅白帶 */
 .tab-bar__inner {
+  pointer-events: auto;
   display: flex;
   gap: var(--space-1);
   overflow-x: auto;
   scrollbar-width: thin;
+  padding-inline: var(--space-3);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+}
+
+/* 錨點/分頁切換捲動時,別讓標題躲進兩顆膠囊後面 */
+[role="tabpanel"] {
+  scroll-margin-block-start: calc(var(--nav-clearance) + 4.5rem);
+}
+
+.section[id],
+.panel-subsection[id] {
+  scroll-margin-block-start: calc(var(--nav-clearance) + var(--space-4));
 }
 
 .tab {
