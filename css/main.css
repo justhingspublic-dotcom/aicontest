@@ -618,66 +618,46 @@ a:hover {
   isolation: isolate;
 }
 
-/* KV Hero:官方雲海底圖上以 HTML 標題與盾徽構圖,KV 艦隊場景帶收底。
-   雲海疊白紗壓低光束與粒子的存在感,視覺主角留給標題與盾徽 */
+/* KV Hero:官方主視覺完整置中,雲海底圖左右無縫延伸,資訊列下置不壓圖 */
 .hero--kv {
+  margin-block-start: calc(-1 * var(--nav-clearance));
   background:
-    linear-gradient(rgba(243, 248, 253, 0.62), rgba(243, 248, 253, 0.42) 58%, rgba(243, 248, 253, 0.2)),
-    radial-gradient(ellipse 62% 58% at 30% 40%, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0) 72%),
     url("../img/brand/sky.jpg") center top / cover no-repeat;
 }
 
-.hero--kv {
-  margin-block-start: calc(-1 * var(--nav-clearance));
-}
-
-.hero__kv-inner {
+.hero__kv-stage {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--space-8);
-  align-items: center;
-  padding-block:
-    calc(var(--nav-clearance) + clamp(var(--space-6), 4vw, var(--space-12)))
-    clamp(var(--space-6), 4vw, var(--space-12));
+  place-items: center;
+  padding-block-start: var(--nav-clearance);
 }
 
-.hero__title-conj {
-  font-size: 0.62em;
-  font-weight: 500;
-  color: var(--color-blue-deep);
-  margin-inline-end: 0.2em;
-}
-
-.hero__emblem {
-  display: none;
-}
-
-.hero__fleet img {
+.hero__kv-art {
   display: block;
-  inline-size: 100%;
+  inline-size: auto;
+  /* 不放大超過原生 1536px,維持銳利;高度受限時等比縮小,兩側透出雲海 */
+  max-inline-size: min(100%, 96rem);
   block-size: auto;
-  filter: saturate(0.82) brightness(1.04);
-  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 45%);
-  mask-image: linear-gradient(to bottom, transparent, #000 45%);
+  max-block-size: calc(100svh - var(--nav-clearance) - 8rem);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
 }
 
-/* 平板以上:標題左、盾徽右的雙欄構圖 */
-@media (min-width: 48rem) {
-  .hero__kv-inner {
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-    gap: clamp(var(--space-8), 5vw, var(--space-16));
-  }
+.hero__kv-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4) var(--space-8);
+  padding-block: var(--space-5) clamp(var(--space-6), 4vw, var(--space-10));
+}
 
-  .hero__emblem {
-    display: block;
-    justify-self: center;
-  }
+.hero__kv-bar .hero__dates,
+.hero__kv-bar .hero__actions {
+  margin-block-start: 0;
+}
 
-  .hero__emblem img {
-    inline-size: clamp(13rem, 22vw, 19.5rem);
-    block-size: auto;
-    filter: drop-shadow(0 1rem 1.75rem rgba(12, 78, 155, 0.22));
-  }
+.hero__kv-bar .btn {
+  white-space: nowrap;
 }
 
 
