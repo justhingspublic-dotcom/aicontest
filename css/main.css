@@ -1584,6 +1584,25 @@ a:hover {
   gap: var(--space-8);
 }
 
+/* 官方視覺暫未定稿時的占位面板 */
+.official-assets--pending {
+  display: block;
+  padding: clamp(var(--space-8), 6vw, var(--space-12)) var(--space-6);
+  border: 1px dashed var(--color-line);
+  border-radius: var(--radius-container);
+  background: var(--color-white);
+  text-align: center;
+}
+
+.official-assets__pending {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  color: var(--color-text-muted);
+}
+
 .official-asset {
   overflow: hidden;
   background: var(--color-white);
