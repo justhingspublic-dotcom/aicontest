@@ -650,12 +650,12 @@ a:hover {
   /* 圓角矩形溶解:水平×垂直羽化交集,四邊融入雲海、角落自然圓潤 */
   border-radius: clamp(12px, 1.5vw, 24px);
   -webkit-mask-image:
-    linear-gradient(to right, transparent, #000 5%, #000 95%, transparent),
-    linear-gradient(to bottom, transparent, #000 6%, #000 93%, transparent);
+    linear-gradient(to right, transparent, #000 8%, #000 92%, transparent),
+    linear-gradient(to bottom, transparent, #000 9%, #000 90%, transparent);
   -webkit-mask-composite: source-in;
   mask-image:
-    linear-gradient(to right, transparent, #000 5%, #000 95%, transparent),
-    linear-gradient(to bottom, transparent, #000 6%, #000 93%, transparent);
+    linear-gradient(to right, transparent, #000 8%, #000 92%, transparent),
+    linear-gradient(to bottom, transparent, #000 9%, #000 90%, transparent);
   mask-composite: intersect;
 }
 
