@@ -388,6 +388,15 @@ a:hover {
   border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
+/* 導覽列的官方盾徽:去白框、放大,作為站徽主角 */
+.site-header .brand__mark--logo {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  inline-size: 2.875rem;
+  block-size: auto;
+}
+
 .brand__text {
   display: flex;
   flex-direction: column;
@@ -638,8 +647,14 @@ a:hover {
   max-inline-size: min(100%, 96rem);
   block-size: auto;
   max-block-size: calc(100svh - var(--nav-clearance) - 8rem);
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
-  mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+  -webkit-mask-image:
+    linear-gradient(to right, transparent, #000 5%, #000 95%, transparent),
+    linear-gradient(to bottom, #000 90%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent, #000 5%, #000 95%, transparent),
+    linear-gradient(to bottom, #000 90%, transparent);
+  mask-composite: intersect;
 }
 
 .hero__kv-bar {
