@@ -6,3 +6,6 @@ node_modules/
 .env.*
 !.env.example
 
+
+# 內部 QA 截圖不入版控
+qa/

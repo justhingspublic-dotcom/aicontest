@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="2026 神盾盃國際邀請賽暨國防 AI 競賽報名流程、文件下載、檔案規範與報名系統入口。">
-  <title>報名資訊｜2026 神盾盃國際邀請賽暨國防 AI 競賽</title>
+  <meta name="description" content="2026 神盾盃國際邀請賽暨國防 AI 競賽報名入口：各競賽報名平台、報名流程、狀態查詢與參賽者專區。">
+  <title>馬上報名｜2026 神盾盃國際邀請賽暨國防 AI 競賽</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
@@ -13,7 +16,7 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand" href="index.html">
-        <span class="brand__mark" aria-hidden="true">AI</span>
+        <img class="brand__mark brand__mark--logo" src="../img/brand/shield.png" alt="" width="400" height="351">
         <span class="brand__text">
           <span>2026 神盾盃</span>
           <small>國際邀請賽暨國防 AI 競賽</small>
@@ -32,12 +35,19 @@
 
       <nav class="site-nav" id="site-nav" aria-label="主選單">
         <ul class="site-nav__list">
-          <li><a class="site-nav__link" href="index.html">首頁</a></li>
-          <li><a class="site-nav__link" href="about.html">活動介紹與辦法</a></li>
-          <li><a class="site-nav__link" href="register.html" aria-current="page">報名資訊</a></li>
-          <li><a class="site-nav__link" href="news.html">公告與成果</a></li>
+          <li class="site-nav__item--has-sub">
+            <a class="site-nav__link" href="index.html">首頁<span class="site-nav__caret" aria-hidden="true">▾</span></a>
+            <ul class="site-nav__sub">
+              <li><a href="index.html#intro">活動介紹</a></li>
+              <li><a href="index.html#schedule">活動時程</a></li>
+            </ul>
+          </li>
+          <li><a class="site-nav__link" href="competition.html">關於競賽</a></li>
+          <li><a class="site-nav__link" href="forum.html">達人論壇</a></li>
+          <li><a class="site-nav__link" href="sponsors.html">贊助與參展</a></li>
+          <li><a class="site-nav__link" href="transport-contact.html">交通與聯絡資訊</a></li>
         </ul>
-        <a class="btn btn--primary btn--sm" href="portal.html#profile">報名參賽</a>
+        <a class="btn btn--primary btn--sm" href="register.html">馬上報名</a>
       </nav>
     </div>
   </header>
@@ -46,154 +56,180 @@
 
     <!-- 頁面標題 -->
     <section class="page-hero" aria-labelledby="page-title">
-      <div class="camo-strip" aria-hidden="true"></div>
-      <!-- 背景照片：光弧抽象視覺（Unsplash 免費授權）＋深色遮罩、夜視綠濾鏡 -->
       <div class="page-hero__photo" aria-hidden="true">
-        <img src="../img/hero-wave.jpg" alt="" width="2400" height="1350" fetchpriority="high">
+        <img src="../img/unsplash/register.jpg" alt="" width="1600" height="2132" fetchpriority="high">
       </div>
       <div class="container page-hero__inner">
         <span class="page-hero__eyebrow">REGISTRATION</span>
-        <h1 class="page-hero__title" id="page-title">報名資訊</h1>
+        <h1 class="page-hero__title" id="page-title">馬上報名</h1>
         <p class="page-hero__lede">
-          依照以下流程完成報名。報名與各階段資料上傳期限 <span class="tbd">待公告</span>；
-          截止後系統將依階段鎖定指定資料。
+          先閱讀競賽說明並選擇參賽項目，各項目報名平台不同：部分主題由 Kaggle 或外部表單受理，
+          其餘由活動官網報名。報名起訖時間 <span class="tbd">待公告</span>。
         </p>
       </div>
     </section>
 
-    <!-- 報名流程 -->
-    <section class="section" aria-labelledby="flow-title">
+    <!-- 報名平台分流 -->
+    <section class="section" id="platforms" aria-labelledby="platforms-title">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="section-eyebrow">WHERE TO REGISTER</p>
+          <h2 class="section-title" id="platforms-title">選擇參賽項目</h2>
+          <p class="section-lede">
+            依主辦單位指示，開放集船舶目標識別與船舶影像可解釋 AI 由 Kaggle 受理報名；
+            導向外部平台時將以新分頁開啟並離開本站。
+          </p>
+        </header>
+
+        <div class="card-grid card-grid--3">
+          <article class="card card--accent-blue reveal">
+            <h3 class="card__title">神盾盃資安競賽</h3>
+            <p class="card__body">AI 資安攻防：LLM 攻擊、CTF、內網滲透與模型攻擊。</p>
+            <p class="route-card__platform">報名平台｜SurveyCake</p>
+            <div class="card__actions">
+              <a class="btn btn--primary-light btn--sm" href="#" data-register-route="shieldCup">前往報名</a>
+              <a class="card__link" href="competition.html#shield-cup">競賽說明</a>
+            </div>
+            <p class="external-hint">外部表單（另開新視窗，將離開本站）。</p>
+          </article>
+
+          <article class="card card--accent-cyan reveal">
+            <h3 class="card__title">AI 研討會｜開放集船舶目標識別</h3>
+            <p class="card__body">HRRP 船舶特徵識別，開放集六類已知＋未知類別。</p>
+            <p class="route-card__platform">報名平台｜Kaggle</p>
+            <div class="card__actions">
+              <a class="btn btn--primary-light btn--sm" href="#" data-register-route="shipOsr">前往 Kaggle 報名</a>
+              <a class="card__link" href="competition.html#ai-seminar">競賽說明</a>
+            </div>
+            <p class="external-hint">Kaggle 平台（另開新視窗，將離開本站）；正式網址待主辦提供。</p>
+          </article>
+
+          <article class="card card--accent-cyan reveal">
+            <h3 class="card__title">AI 研討會｜船舶影像可解釋 AI</h3>
+            <p class="card__body">解釋 ResNet50 船隻辨識模型，Quantus 指標評測。</p>
+            <p class="route-card__platform">報名平台｜Kaggle</p>
+            <div class="card__actions">
+              <a class="btn btn--primary-light btn--sm" href="#" data-register-route="shipXai">前往 Kaggle 報名</a>
+              <a class="card__link" href="competition.html#ai-seminar">競賽說明</a>
+            </div>
+            <p class="external-hint">Kaggle 平台（另開新視窗，將離開本站）；正式網址待主辦提供。</p>
+          </article>
+
+          <article class="card card--accent-cyan reveal">
+            <h3 class="card__title">AI 研討會｜輕量化 LLM 國防知識應用</h3>
+            <p class="card__body">RAG 國防知識問答系統；遠端 AI 評測＋現場離線實測。</p>
+            <p class="route-card__platform">報名平台｜活動官網</p>
+            <div class="card__actions">
+              <a class="btn btn--primary-light btn--sm" href="portal.html#profile" data-register-route="llm">由官網報名</a>
+              <a class="card__link" href="competition.html#ai-seminar">競賽說明</a>
+            </div>
+            <p class="external-hint">需提交 AI 評測時間預約單與 API 介面規格說明書。</p>
+          </article>
+
+          <article class="card card--accent-warm reveal">
+            <h3 class="card__title">AI 飛行員擂台賽</h3>
+            <p class="card__body">JSBSim 模擬空戰：1v1 纏鬥、5 戰 3 勝、全程模型自主。</p>
+            <p class="route-card__platform">報名平台｜活動官網</p>
+            <div class="card__actions">
+              <a class="btn btn--primary-light btn--sm" href="portal.html#profile" data-register-route="aiPilot">由官網報名</a>
+              <a class="card__link" href="competition.html#ai-pilot">競賽說明</a>
+            </div>
+          </article>
+
+          <article class="card card--accent-blue reveal">
+            <h3 class="card__title">國防 AI 競賽及陳展</h3>
+            <p class="card__body">AI 應用於國防領域的創新提案；決賽簡報＋實體陳展。</p>
+            <p class="route-card__platform">報名平台｜活動官網</p>
+            <div class="card__actions">
+              <a class="btn btn--primary-light btn--sm" href="portal.html#profile" data-register-route="defenseAi">由官網報名</a>
+              <a class="card__link" href="competition.html#defense-ai">競賽說明</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 官網報名流程 -->
+    <section class="section section--alt" id="flow" aria-labelledby="flow-title">
       <div class="container">
         <header class="section-header reveal">
           <p class="section-eyebrow">PROCESS</p>
-          <h2 class="section-title" id="flow-title">報名流程</h2>
+          <h2 class="section-title" id="flow-title">官網報名流程</h2>
+          <p class="section-lede">適用由活動官網報名之項目；外部平台（Kaggle、表單）依該平台流程辦理。</p>
         </header>
 
         <ol class="steps">
           <li class="step reveal">
             <div>
-              <h3 class="step__title">建立團隊資料</h3>
-              <p class="step__desc">填寫團隊名稱、參賽項目與聯絡人資料，不需要另外設定帳號密碼。</p>
+              <h3 class="step__title">選擇競賽項目</h3>
+              <p class="step__desc">確認參賽類別與資格；同一類別僅能報名一次。</p>
             </div>
           </li>
           <li class="step reveal">
             <div>
-              <h3 class="step__title">下載並填寫文件</h3>
-              <p class="step__desc">下載報名表、AI 評測時間預約單、API 規格書與個資同意書，依說明完成填寫。</p>
+              <h3 class="step__title">同意參賽規範</h3>
+              <p class="step__desc">閱讀並同意參賽規範與個人資料運用相關規範。</p>
             </div>
           </li>
           <li class="step reveal">
             <div>
-              <h3 class="step__title">上傳並更新資料</h3>
-              <p class="step__desc">上傳報名表、個資同意書、作品介紹與其他資料；截止日前可更新指定文件。</p>
+              <h3 class="step__title">填寫團隊資料</h3>
+              <p class="step__desc">填寫學校／機構、團隊、指導老師與合作單位資料。</p>
             </div>
           </li>
           <li class="step reveal">
             <div>
-              <h3 class="step__title">查詢階段結果</h3>
-              <p class="step__desc">送出後可查詢報名狀態與書面／AI 評測結果，入選隊伍再依通知提交決選資料。</p>
+              <h3 class="step__title">上傳資格文件</h3>
+              <p class="step__desc">上傳團隊名冊、資格證明與同意書等指定文件。</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <div>
+              <h3 class="step__title">預覽並送出</h3>
+              <p class="step__desc">確認資料無誤後送出，取得報名編號與確認信。</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <div>
+              <h3 class="step__title">資格審查與補件</h3>
+              <p class="step__desc">主辦審查資格；如需補件依通知於期限內完成。</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <div>
+              <h3 class="step__title">通過後繳交作品</h3>
+              <p class="step__desc">通過資格檢核且於繳交期間內，方可上傳比賽檔案。</p>
             </div>
           </li>
         </ol>
       </div>
     </section>
 
-    <!-- 文件下載 -->
-    <section class="section section--alt" aria-labelledby="docs-title">
+    <!-- 狀態查詢 -->
+    <section class="section" id="status" aria-labelledby="status-title">
       <div class="container">
         <header class="section-header reveal">
-          <p class="section-eyebrow">DOWNLOADS</p>
-          <h2 class="section-title" id="docs-title">報名文件下載</h2>
-          <p class="section-lede">文件名稱與格式已依需求簡報整理；正式檔案尚待主辦單位提供，上架後即可在此下載。</p>
+          <p class="section-eyebrow">STATUS</p>
+          <h2 class="section-title" id="status-title">報名狀態與結果查詢</h2>
+          <p class="section-lede">送出報名後可於參賽者專區查詢狀態；補件與競賽結果亦於專區查看。</p>
         </header>
 
-        <ul class="download-list reveal">
-          <li class="download-item">
-            <span class="download-item__format">DOCX</span>
-            <span class="download-item__name">報名表</span>
-            <span class="download-item__size">-- MB</span>
-            <button class="download-item__link" type="button" data-unavailable="報名表尚待主辦單位提供正式檔案。">待上架</button>
-          </li>
-          <li class="download-item">
-            <span class="download-item__format">DOCX</span>
-            <span class="download-item__name">AI 評測時間預約單</span>
-            <span class="download-item__size">-- MB</span>
-            <button class="download-item__link" type="button" data-unavailable="AI 評測時間預約單尚待主辦單位提供正式檔案。">待上架</button>
-          </li>
-          <li class="download-item">
-            <span class="download-item__format">DOCX</span>
-            <span class="download-item__name">API 介面規格說明書</span>
-            <span class="download-item__size">-- MB</span>
-            <button class="download-item__link" type="button" data-unavailable="API 介面規格說明書尚待主辦單位提供正式檔案。">待上架</button>
-          </li>
-          <li class="download-item">
-            <span class="download-item__format">PDF</span>
-            <span class="download-item__name">個人資料蒐集、處理及利用同意書</span>
-            <span class="download-item__size">-- MB</span>
-            <button class="download-item__link" type="button" data-unavailable="個資同意書尚待主辦單位提供正式檔案。">待上架</button>
-          </li>
-          <li class="download-item">
-            <span class="download-item__format">PDF</span>
-            <span class="download-item__name">賽程資訊</span>
-            <span class="download-item__size">-- MB</span>
-            <button class="download-item__link" type="button" data-unavailable="賽程資訊尚待主辦單位公告。">待上架</button>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- 檔案格式規範 -->
-    <section class="section" aria-labelledby="spec-title">
-      <div class="container">
-        <header class="section-header reveal">
-          <p class="section-eyebrow">FILE SPEC</p>
-          <h2 class="section-title" id="spec-title">檔案格式與容量規範</h2>
-        </header>
-
-        <div class="table-wrapper reveal" tabindex="0">
-          <table class="data-table">
-            <caption>依 2026.07.28 網站需求簡報整理；正式規範以活動公告為準。</caption>
-            <thead>
-              <tr>
-                <th scope="col">資料類別</th>
-                <th scope="col">允許格式</th>
-                <th scope="col">單檔容量上限</th>
-                <th scope="col">數量／備註</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">報名表</th>
-                <td>PDF</td>
-                <td>300 MB</td>
-                <td>1 份</td>
-              </tr>
-              <tr>
-                <th scope="row">個資同意書</th>
-                <td>PDF</td>
-                <td>300 MB</td>
-                <td>1 份</td>
-              </tr>
-              <tr>
-                <th scope="row">作品介紹</th>
-                <td>PDF</td>
-                <td>300 MB</td>
-                <td>可更新至截止日</td>
-              </tr>
-              <tr>
-                <th scope="row">AI 評測／API 文件</th>
-                <td>PDF</td>
-                <td>300 MB</td>
-                <td>可更新至截止日</td>
-              </tr>
-              <tr>
-                <th scope="row">其他補充資料</th>
-                <td>PDF、7z、zip、rar 等</td>
-                <td>300 MB</td>
-                <td>檔案總數最多 10 個</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="prose reveal">
+          <p>報名狀態共分六種：</p>
+          <ul class="status-legend" aria-label="報名狀態種類">
+            <li>草稿</li>
+            <li>已送出</li>
+            <li>審查中</li>
+            <li>待補件</li>
+            <li>通過</li>
+            <li>不符</li>
+          </ul>
+          <p style="margin-block-start: var(--space-4);">
+            查詢時以報名編號、聯絡人電子郵件與驗證資訊確認身分；正式驗證方式將於報名系統建置時確認。
+          </p>
+          <div class="card__actions">
+            <a class="btn btn--secondary" href="portal.html#result">前往查詢狀態</a>
+          </div>
         </div>
       </div>
     </section>
@@ -208,43 +244,44 @@
 
         <div class="prose reveal">
           <ul>
-            <li>報名、AI 評測與各階段資料上傳期限 <span class="tbd">待公告</span>，逾期後系統將依階段鎖定。</li>
-            <li>報名表與個資同意書送出後不得任意替換；作品介紹、API 規格、AI 評測預約單與補充資料可於截止日前更新。</li>
-            <li>單檔容量上限 300MB，檔案總數最多 10 個；壓縮資料可使用 7z、zip 或 rar。</li>
-            <li>上傳檔案請依規範命名與轉檔；缺件或格式錯誤將顯示提醒。</li>
-            <li>個人資料蒐集、處理及利用同意書需完成簽署後上傳。</li>
+            <li>報名、補件與各階段繳交期限 <span class="tbd">待公告</span>；截止後系統依階段鎖定。</li>
+            <li>全體成員需完成參賽同意書與個人資料運用同意書。</li>
+            <li>同一參賽團隊或個人可重複報名不同類別，但同一類別僅能報名一次。</li>
+            <li>團隊人數、企業合作與必備欄位依各競賽規定不同，請先閱讀<a href="competition.html">競賽說明</a>。</li>
+            <li id="upload-rule-note">上傳檔案的格式、單檔容量與數量規範 <span class="tbd">待主辦單位確認</span>，確認後將於本頁與參賽者專區公告。</li>
+            <li>導向 Kaggle、SurveyCake 或 Google 表單等外部平台時，將以新分頁開啟並明確標示離開本站。</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- 報名系統入口 -->
+    <!-- 參賽者專區入口 -->
     <section class="section section--dark" id="registration-portal" aria-labelledby="portal-title">
       <div class="container portal-preview">
         <div class="reveal">
           <header class="section-header" style="margin-block-end: var(--space-6);">
-            <p class="section-eyebrow">PORTAL</p>
-            <h2 class="section-title" id="portal-title">進入報名系統</h2>
+            <p class="section-eyebrow">PARTICIPANT PORTAL</p>
+            <h2 class="section-title" id="portal-title">參賽者專區</h2>
             <p class="section-lede">
-              參賽者可直接建立團隊資料並開始報名；正式流程將以聯絡信箱作為通知與後續管理依據，不需設定帳號密碼。
+              由活動官網報名之項目，於參賽者專區完成報名、查詢狀態並於資格通過後繳交作品。
             </p>
           </header>
           <ul class="portal-preview__list">
-            <li>開始報名：建立團隊、選擇項目並填寫聯絡資料</li>
-            <li>文件管理：下載範本、上傳文件並確認缺件狀態</li>
-            <li>進度查詢：查看送出狀態、審查階段與最新公告</li>
-            <li>身分確認：正式系統將以聯絡信箱提供安全管理連結</li>
+            <li>新增／續填報名：暫存草稿並於送出前預覽</li>
+            <li>報名狀態與補件：查詢審查進度與補件項目</li>
+            <li>比賽檔案上傳：通過資格檢核後依階段開放</li>
+            <li>競賽結果查詢：初賽、決賽名單與得獎結果</li>
           </ul>
         </div>
 
         <article class="portal-entry-card reveal" aria-labelledby="entry-title">
-          <p class="portal-entry-card__eyebrow">PASSWORDLESS ENTRY</p>
-          <h3 class="portal-entry-card__title" id="entry-title">免帳號密碼報名</h3>
-          <p class="portal-entry-card__desc">直接建立團隊資料並開始上傳報名文件。需要繼續填寫時，再次點選「報名參賽」即可回到目前進度。</p>
+          <p class="portal-entry-card__eyebrow">PORTAL ENTRY</p>
+          <h3 class="portal-entry-card__title" id="entry-title">進入參賽者專區</h3>
+          <p class="portal-entry-card__desc">建立團隊資料並開始報名；需要續填時再次進入即可回到目前進度。</p>
           <div class="portal-entry-card__actions">
-            <a class="btn btn--primary" href="portal.html#profile">報名參賽</a>
+            <a class="btn btn--primary" href="portal.html#profile">開始報名</a>
           </div>
-          <p class="portal-entry-card__note">正式身分確認方式將於報名系統建置時串接，不需建立密碼。</p>
+          <p class="portal-entry-card__note">正式帳號／驗證機制待確認，展示版以瀏覽器本機保存進度。</p>
         </article>
       </div>
     </section>
@@ -254,43 +291,51 @@
     <div class="container site-footer__inner">
       <div class="site-footer__brand">
         <a class="brand" href="index.html">
-          <span class="brand__mark" aria-hidden="true">AI</span>
+          <img class="brand__mark brand__mark--logo" src="../img/brand/shield.png" alt="" width="400" height="351">
           <span class="brand__text">
             <span>2026 神盾盃</span>
-            <small>主辦單位｜中山科學院</small>
+            <small>國際邀請賽暨國防 AI 競賽</small>
           </span>
         </a>
+        <p class="site-footer__units">
+          指導單位｜<span class="tbd">待確認</span><br>
+          主辦單位｜<span data-config="organizers.host">國家中山科學研究院</span><br>
+          協辦單位｜<span data-config="organizers.coOrganizersText">財團法人資訊工業策進會、奧義科技股份有限公司、國家資通安全研究院、國立成功大學</span>
+        </p>
       </div>
 
       <nav aria-label="頁尾選單">
         <h2>SITEMAP</h2>
         <ul>
           <li><a href="index.html">首頁</a></li>
-          <li><a href="about.html">活動介紹與辦法</a></li>
-          <li><a href="register.html">報名資訊</a></li>
-          <li><a href="news.html">公告與成果</a></li>
-          <li><a href="portal.html#profile">報名參賽</a></li>
+          <li><a href="competition.html">關於競賽</a></li>
+          <li><a href="forum.html">達人論壇</a></li>
+          <li><a href="register.html">馬上報名</a></li>
+          <li><a href="sponsors.html">贊助與參展</a></li>
+          <li><a href="transport-contact.html">交通與聯絡資訊</a></li>
+          <li><a href="news.html">最新消息</a></li>
         </ul>
       </nav>
 
       <div>
         <h2>CONTACT</h2>
         <ul>
-          <li>活動日期｜2026.11.07—08</li>
-          <li>決賽地點｜國立成功大學</li>
-          <li>聯絡窗口｜<span class="tbd">待公告</span></li>
+          <li>決賽日期｜<span data-config="event.finalDateText">2026.11.07—08</span></li>
+          <li>決賽地點｜<span data-config="event.finalVenue">國立成功大學</span></li>
+          <li><a href="transport-contact.html">交通資訊與聯絡窗口</a></li>
         </ul>
       </div>
     </div>
 
     <div class="container site-footer__bottom">
-      <p>© 2026 神盾盃國際邀請賽暨國防 AI 競賽。</p>
-      <p><a href="#">個資與網站使用說明</a>（正式內容 <span class="tbd">待公告</span>）</p>
+      <p>© 2026 神盾盃國際邀請賽暨國防 AI 競賽</p>
+      <p>網站更新日期｜<span data-config="event.siteUpdatedAt">2026-08-06</span></p>
     </div>
   </footer>
 
   <p id="demo-status" class="demo-status" role="status" aria-live="polite"></p>
 
+  <script src="../js/site-config.js"></script>
   <script src="../js/main.js"></script>
 </body>
 </html>

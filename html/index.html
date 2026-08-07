@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="2026 神盾盃國際邀請賽暨國防 AI 競賽：AI 資安攻防、國防 AI 應用、AI 研討會與 AI 飛行員擂台賽。">
+  <meta name="description" content="2026 神盾盃國際邀請賽暨國防 AI 競賽官方活動網站：神盾盃資安競賽、國防 AI 競賽及陳展、AI 研討會與 AI 飛行員擂台賽。">
   <title>首頁｜2026 神盾盃國際邀請賽暨國防 AI 競賽</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
@@ -13,7 +16,7 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand" href="index.html">
-        <span class="brand__mark" aria-hidden="true">AI</span>
+        <img class="brand__mark brand__mark--logo" src="../img/brand/shield.png" alt="" width="400" height="351">
         <span class="brand__text">
           <span>2026 神盾盃</span>
           <small>國際邀請賽暨國防 AI 競賽</small>
@@ -32,238 +35,443 @@
 
       <nav class="site-nav" id="site-nav" aria-label="主選單">
         <ul class="site-nav__list">
-          <li><a class="site-nav__link" href="index.html" aria-current="page">首頁</a></li>
-          <li><a class="site-nav__link" href="about.html">活動介紹與辦法</a></li>
-          <li><a class="site-nav__link" href="register.html">報名資訊</a></li>
-          <li><a class="site-nav__link" href="news.html">公告與成果</a></li>
+          <li class="site-nav__item--has-sub">
+            <a class="site-nav__link" href="index.html" aria-current="page">首頁<span class="site-nav__caret" aria-hidden="true">▾</span></a>
+            <ul class="site-nav__sub">
+              <li><a href="index.html#intro">活動介紹</a></li>
+              <li><a href="index.html#schedule">活動時程</a></li>
+            </ul>
+          </li>
+          <li><a class="site-nav__link" href="competition.html">關於競賽</a></li>
+          <li><a class="site-nav__link" href="forum.html">達人論壇</a></li>
+          <li><a class="site-nav__link" href="sponsors.html">贊助與參展</a></li>
+          <li><a class="site-nav__link" href="transport-contact.html">交通與聯絡資訊</a></li>
         </ul>
-        <a class="btn btn--primary btn--sm" href="portal.html#profile">報名參賽</a>
+        <a class="btn btn--primary btn--sm" href="register.html">馬上報名</a>
       </nav>
     </div>
   </header>
 
   <main id="main-content">
 
-    <!-- Hero -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="camo-strip" aria-hidden="true"></div>
-      <!-- 背景照片：地球夜景（Unsplash / NASA，免費授權）＋深色遮罩 -->
-      <div class="hero__photo" aria-hidden="true">
-        <img src="../img/hero-earth.jpg" alt="" width="1920" height="1278" fetchpriority="high">
-      </div>
-      <div class="container hero__inner">
-        <div>
-          <p class="hero__tagline">國防科技 × AI 創新 × 任務導向</p>
-          <h1 class="hero__title" id="hero-title">以 AI 任務<br>探索國防科技的<span class="hero__title-keep">下一步</span></h1>
-          <p class="hero__subtitle">
-            2026 神盾盃國際邀請賽暨國防 AI 競賽，聚焦 AI 資安攻防、國防 AI 應用、
-            AI 研討與飛行任務，於決賽現場匯聚競賽、展示與全民體驗活動。
-          </p>
-
+    <!-- 主視覺 Hero:官方雲海底圖 + HTML 標題 + 盾徽,KV 艦隊場景帶收底 -->
+    <section class="hero hero--kv" aria-labelledby="hero-title">
+      <div class="container hero__kv-inner">
+        <div class="hero__copy">
+          <p class="hero__tagline">2026 SHIELD CUP × DEFENSE AI</p>
+          <h1 class="hero__title" id="hero-title">
+            神盾盃國際邀請賽<br>
+            <span class="hero__title-conj">暨</span>國防 AI 競賽
+          </h1>
+          <p class="hero__subtitle">資安攻防、國防 AI 創新應用、學術研討與空戰智慧決策，四大競賽同場較勁，決賽於國立成功大學登場。</p>
           <dl class="hero__dates">
             <div class="hero__date-item">
               <dt class="hero__date-label">決賽日期</dt>
-              <dd class="hero__date-value">2026.11.07—08</dd>
+              <dd class="hero__date-value" data-config="event.finalDateText">2026.11.07—08</dd>
             </div>
             <div class="hero__date-item">
               <dt class="hero__date-label">決賽地點</dt>
-              <dd class="hero__date-value">國立成功大學</dd>
+              <dd class="hero__date-value" data-config="event.finalVenue">國立成功大學</dd>
             </div>
             <div class="hero__date-item">
               <dt class="hero__date-label">主辦單位</dt>
-              <dd class="hero__date-value">中山科學院</dd>
+              <dd class="hero__date-value">國家中山科學研究院</dd>
             </div>
           </dl>
-
           <div class="hero__actions">
-            <a class="btn btn--primary" href="portal.html#profile">報名參賽</a>
-            <a class="btn btn--secondary" href="about.html">查看競賽辦法</a>
+            <a class="btn btn--primary" href="register.html">馬上報名</a>
+            <a class="btn btn--secondary" href="competition.html">查看競賽說明</a>
           </div>
         </div>
-
-        <figure class="hero__visual">
-          <img src="../img/official-poster.png"
-               alt="2026 神盾盃國際邀請賽暨國防 AI 競賽宣傳海報"
-               width="1080" height="1527" fetchpriority="high">
-          <figcaption class="sr-only">正式宣傳海報，包含活動日期、地點、四大項目與獎金資訊。</figcaption>
-        </figure>
+        <div class="hero__emblem" aria-hidden="true">
+          <img src="../img/brand/shield-cut.png" alt="" width="399" height="339" fetchpriority="high">
+        </div>
+      </div>
+      <div class="hero__fleet" aria-hidden="true">
+        <img src="../img/brand/kv-fleet-band.jpg" alt="" width="1536" height="265">
       </div>
     </section>
 
-    <!-- 活動亮點 -->
-    <section class="section" aria-labelledby="highlights-title">
+    <!-- 比賽目的 -->
+    <section class="section" aria-labelledby="purpose-title">
       <div class="container">
         <header class="section-header reveal">
-          <p class="section-eyebrow">HIGHLIGHTS</p>
-          <h2 class="section-title" id="highlights-title">活動亮點</h2>
+          <p class="section-eyebrow">MISSION</p>
+          <h2 class="section-title" id="purpose-title">比賽目的</h2>
           <p class="section-lede">從真實任務出發，讓 AI 技術落地於國防應用場景。</p>
         </header>
 
-        <div class="card-grid card-grid--3">
-          <article class="card reveal">
+        <div class="card-grid card-grid--4">
+          <article class="card card--accent-blue reveal">
             <div class="card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="3" x2="12" y2="7"/><line x1="12" y1="17" x2="12" y2="21"/>
               </svg>
             </div>
-            <h3 class="card__title">四大挑戰項目</h3>
-            <p class="card__body">
-              從 AI 資安攻防、國防系統應用，到 AI 研討與飛行員擂台，連結技術、任務與實際場域。
-            </p>
-            <a class="card__link" href="about.html">查看競賽項目</a>
+            <h3 class="card__title">創新驅動</h3>
+            <p class="card__body">鼓勵前瞻技術與應用構想，探索 AI 於國防領域的創新可能。</p>
           </article>
 
-          <article class="card reveal">
+          <article class="card card--accent-cyan reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><line x1="6.8" y1="7.8" x2="10.5" y2="16"/><line x1="17.2" y1="7.8" x2="13.5" y2="16"/><line x1="7.5" y1="6" x2="16.5" y2="6"/>
+              </svg>
+            </div>
+            <h3 class="card__title">跨域整合</h3>
+            <p class="card__body">串聯學研、產業與法人能量，促成跨領域、跨單位的合作。</p>
+          </article>
+
+          <article class="card card--accent-green reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>
+              </svg>
+            </div>
+            <h3 class="card__title">實務驗證</h3>
+            <p class="card__body">以任務情境與實測環境驗證技術方案的可行性與價值。</p>
+          </article>
+
+          <article class="card card--accent-warm reveal">
             <div class="card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
               </svg>
             </div>
-            <h3 class="card__title">總獎金 179 萬元</h3>
-            <p class="card__body">
-              四大項目各有獎項與任務焦點，獎項名額、參賽資格與正式辦法依官方公告為準。
-            </p>
-            <a class="card__link" href="about.html">查看獎項資訊</a>
-          </article>
-
-          <article class="card reveal">
-            <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 9H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 3v13a6 6 0 0 0 12 0V3"/><line x1="12" y1="22" x2="12" y2="19"/>
-              </svg>
-            </div>
-            <h3 class="card__title">決賽現場體驗</h3>
-            <p class="card__body">
-              AI 成果展示、國防 AI 研討、AI 飛行員擂台、全民國防體驗與資安體驗密室同步展開。
-            </p>
-            <a class="card__link" href="news.html">查看活動內容</a>
+            <h3 class="card__title">國防科技人才培育</h3>
+            <p class="card__body">透過競賽、研討與展示，發掘並培育國防 AI 領域人才。</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 競賽領域 -->
-    <section class="section section--dark" aria-labelledby="domains-title">
+    <!-- 重要日期 -->
+    <section class="section section--alt" aria-labelledby="dates-title">
       <div class="container">
         <header class="section-header reveal">
-          <p class="section-eyebrow">DOMAINS</p>
-          <h2 class="section-title" id="domains-title">競賽領域</h2>
-          <p class="section-lede">四大挑戰項目與獎項資訊，細部規則與報名方式依官方公告為準。</p>
+          <p class="section-eyebrow">KEY DATES</p>
+          <h2 class="section-title" id="dates-title">重要日期</h2>
+          <p class="section-lede">各競賽期程依競賽辦法修正版（2026-08-06）列示；若有異動以主辦單位公告為準。</p>
+        </header>
+
+        <div class="card-grid card-grid--3">
+          <article class="card reveal">
+            <p class="card__eyebrow">REGISTRATION</p>
+            <h3 class="card__title">報名期間</h3>
+            <p class="card__body">
+              神盾盃｜至 <strong>2026.09.05</strong>（SurveyCake）<br>
+              國防 AI 競賽｜至 <strong>2026.10.09</strong><br>
+              AI 研討會｜至 <strong>2026.10.21</strong><br>
+              AI 飛行員｜<span class="tbd">截止日待公告</span>
+            </p>
+            <a class="card__link" href="register.html">查看報名方式</a>
+          </article>
+          <article class="card reveal">
+            <p class="card__eyebrow">QUALIFIER</p>
+            <h3 class="card__title">初賽／資格賽</h3>
+            <p class="card__body">
+              神盾盃｜<strong>09.17–09.19</strong> 線上 57 小時<br>
+              國防 AI 競賽｜書面審查，<strong>10.26</strong> 公告晉級<br>
+              AI 研討會｜模型驗測至 <strong>10.21</strong>
+            </p>
+            <a class="card__link" href="competition.html">查看競賽說明</a>
+          </article>
+          <article class="card card--accent-blue reveal">
+            <p class="card__eyebrow">FINALS</p>
+            <h3 class="card__title">決賽與成果展示</h3>
+            <p class="card__body"><strong data-config="event.finalDateText">2026.11.07—08</strong>｜<span data-config="event.finalVenue">國立成功大學</span></p>
+            <a class="card__link" href="#schedule">查看活動時程</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 總獎金橫幅(獎金區開場) -->
+    <section class="prize-banner" aria-label="總獎金">
+      <div class="container prize-banner__inner">
+        <p class="prize-banner__text">
+          <span class="prize-banner__label">總獎金高達</span>
+          <span class="prize-banner__value" data-config="prizes.totalText">255 萬元</span>
+        </p>
+        <div class="prize-banner__side">
+          <a class="btn btn--primary-light" href="competition.html">查看獎項與獎金</a>
+          <p class="prize-banner__note" data-config="prizes.conflictNote">分項獎金與得獎名額以主辦單位正式公告為準。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 獎勵摘要 -->
+    <section class="section section--alt" id="prizes" aria-labelledby="prize-title">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="section-eyebrow">PRIZES</p>
+          <h2 class="section-title" id="prize-title">獎勵摘要</h2>
+          <p class="section-lede">總獎金 255 萬元，分項獎金依競賽辦法修正版列示；名次獎勵詳見各競賽說明。</p>
         </header>
 
         <div class="card-grid card-grid--4">
           <article class="card reveal">
-            <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
-              </svg>
-            </div>
-            <h3 class="card__title">神盾盃國際邀請賽</h3>
-            <p class="card__body">AI 資安攻防｜總獎金 65 萬元，首獎 20 萬元。</p>
+            <h3 class="card__title" data-config="prizes.items.shieldCup.name">神盾盃資安競賽</h3>
+            <p class="prize-card__value" data-config="prizes.items.shieldCup.totalText">100 萬元</p>
+            <p class="card__body">AI 資安攻防：LLM 攻擊技術、CTF、內網滲透與 AI 模型攻擊。</p>
           </article>
-
           <article class="card reveal">
-            <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 3H5a2 2 0 0 0-2 2v4"/><path d="M15 3h4a2 2 0 0 1 2 2v4"/><path d="M9 21H5a2 2 0 0 1-2-2v-4"/><path d="M15 21h4a2 2 0 0 0 2-2v-4"/><circle cx="12" cy="12" r="3"/>
-              </svg>
-            </div>
-            <h3 class="card__title">人工智慧用於國防系統</h3>
-            <p class="card__body">AI × 國防應用｜總獎金 70 萬元，首獎 20 萬元。</p>
+            <h3 class="card__title" data-config="prizes.items.defenseAi.name">國防 AI 競賽及陳展</h3>
+            <p class="prize-card__value" data-config="prizes.items.defenseAi.totalText">90 萬元</p>
+            <p class="card__body">開放所有 AI 應用於國防領域的創新提案，決賽現場展示。</p>
           </article>
-
           <article class="card reveal">
-            <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2 L19 8 V16 L12 22 L5 16 V8 Z"/><circle cx="12" cy="12" r="3"/>
-              </svg>
-            </div>
-            <h3 class="card__title">AI 研討會</h3>
-            <p class="card__body">船舶辨識、可解釋 AI、國防 LLM｜總獎金 24 萬元，最佳論文獎 10 萬元。</p>
+            <h3 class="card__title" data-config="prizes.items.aiSeminar.name">AI 研討會</h3>
+            <p class="prize-card__value" data-config="prizes.items.aiSeminar.totalText">32 萬元</p>
+            <p class="card__body">開放集船舶目標識別、船舶影像可解釋 AI、輕量化國防 LLM。</p>
           </article>
-
           <article class="card reveal">
-            <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
-            </div>
-            <h3 class="card__title">AI 飛行員擂台賽</h3>
-            <p class="card__body">飛行任務與智慧決策｜總獎金 20 萬元，空戰霸主獎金 10 萬元。</p>
+            <h3 class="card__title" data-config="prizes.items.aiPilot.name">AI 飛行員擂台賽</h3>
+            <p class="prize-card__value" data-config="prizes.items.aiPilot.totalText">33 萬元</p>
+            <p class="card__body">模擬空戰環境中的 AI 即時對抗與智慧決策。</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 重要時程 -->
-    <section class="section section--dark" aria-labelledby="timeline-title" style="border-block-start: 1px solid var(--color-line-on-dark);">
+    <!-- 活動介紹（首頁錨點）：八大活動主題 -->
+    <section class="section section--alt" id="intro" aria-labelledby="intro-title">
       <div class="container">
         <header class="section-header reveal">
-          <p class="section-eyebrow">TIMELINE</p>
-          <h2 class="section-title" id="timeline-title">重要時程</h2>
-          <p class="section-lede">決賽日期與地點已確認；報名、評測與審查期程以官方公告為準。</p>
+          <p class="section-eyebrow">EVENT THEMES</p>
+          <h2 class="section-title" id="intro-title">活動介紹｜八大活動主題</h2>
+          <p class="section-lede">競賽、研討、論壇與體驗並行，從專業隊伍到一般民眾都能參與。</p>
         </header>
 
-        <ol class="timeline timeline--horizontal reveal">
-          <li class="timeline__item timeline__item--current">
-            <span class="timeline__dot" aria-hidden="true"></span>
-            <p class="timeline__date"><span class="tbd">時程待公告</span></p>
-            <h3 class="timeline__stage">報名與資料上傳</h3>
-            <p class="timeline__desc">完成團隊資料、報名資料填寫與競賽文件上傳。</p>
-            <span class="timeline__status timeline__status--current">依公告開放</span>
-          </li>
-          <li class="timeline__item timeline__item--deadline">
-            <span class="timeline__dot" aria-hidden="true"></span>
-            <p class="timeline__date"><span class="tbd">時程待公告</span></p>
-            <h3 class="timeline__stage">AI 評測／書面審查</h3>
-            <p class="timeline__desc">依項目進行評測與審查，詳細方式以競賽辦法為準。</p>
-            <span class="timeline__status timeline__status--deadline">階段一</span>
-          </li>
-          <li class="timeline__item">
-            <span class="timeline__dot" aria-hidden="true"></span>
-            <p class="timeline__date"><span class="tbd">時程待公告</span></p>
-            <h3 class="timeline__stage">結果公告與決選準備</h3>
-            <p class="timeline__desc">公告入選名單，並依通知完成下一階段資料提交。</p>
-            <span class="timeline__status timeline__status--upcoming">階段二</span>
-          </li>
-          <li class="timeline__item">
-            <span class="timeline__dot" aria-hidden="true"></span>
-            <p class="timeline__date">2026.11.07—08</p>
-            <h3 class="timeline__stage">決賽與成果發表</h3>
-            <p class="timeline__desc">國立成功大學舉行競賽決選、成果展示、研討與頒獎。</p>
-            <span class="timeline__status timeline__status--upcoming">已確認</span>
-          </li>
-          <li class="timeline__item">
-            <span class="timeline__dot" aria-hidden="true"></span>
-            <p class="timeline__date">活動後</p>
-            <h3 class="timeline__stage">成果專區上線</h3>
-            <p class="timeline__desc">發布活動花絮、成果說明與得獎名單。</p>
-            <span class="timeline__status timeline__status--upcoming">後續更新</span>
-          </li>
-        </ol>
+        <div class="card-grid card-grid--4">
+          <article class="card card--accent-blue reveal">
+            <div class="card__media" aria-hidden="true"><img src="../img/unsplash/theme-ctf.jpg" alt="" width="900" height="600" loading="lazy"></div>
+            <p class="card__eyebrow">01</p>
+            <h3 class="card__title">神盾盃國際邀請賽</h3>
+            <p class="card__body">國際資安攻防、AI 攻防與指定任務競賽，匯聚國內外強隊同場較勁。</p>
+            <a class="card__link" href="competition.html#shield-cup">查看競賽說明</a>
+          </article>
+          <article class="card card--accent-blue reveal">
+            <div class="card__media" aria-hidden="true"><img src="../img/unsplash/theme-drone.jpg" alt="" width="900" height="600" loading="lazy"></div>
+            <p class="card__eyebrow">02</p>
+            <h3 class="card__title">AI 競賽及陳展</h3>
+            <p class="card__body">開放所有人工智慧應用於國防領域的創新提案，決賽現場展示成果。</p>
+            <a class="card__link" href="competition.html#defense-ai">查看競賽說明</a>
+          </article>
+          <article class="card card--accent-cyan reveal">
+            <div class="card__media" aria-hidden="true"><img src="../img/unsplash/theme-ship.jpg" alt="" width="900" height="600" loading="lazy"></div>
+            <p class="card__eyebrow">03</p>
+            <h3 class="card__title">AI 研討會</h3>
+            <p class="card__body">聚焦開放集船舶目標識別、船舶影像可解釋 AI 與國防 LLM 三大主題。</p>
+            <a class="card__link" href="competition.html#ai-seminar">查看競賽說明</a>
+          </article>
+          <article class="card card--accent-warm reveal">
+            <div class="card__media" aria-hidden="true"><img src="../img/unsplash/theme-jet.jpg" alt="" width="900" height="600" loading="lazy"></div>
+            <p class="card__eyebrow">04</p>
+            <h3 class="card__title">AI 飛行員擂台賽</h3>
+            <p class="card__body">模擬飛行、自主追擊、空戰機動、閃避、即時決策與態勢感知。</p>
+            <a class="card__link" href="competition.html#ai-pilot">查看競賽說明</a>
+          </article>
+          <article class="card card--accent-purple reveal">
+            <div class="card__media" aria-hidden="true"><img src="../img/unsplash/theme-forum.jpg" alt="" width="900" height="600" loading="lazy"></div>
+            <p class="card__eyebrow">05</p>
+            <h3 class="card__title">達人論壇</h3>
+            <p class="card__body">國防 AI、無人載具、資安、產業應用與國際趨勢的專家演講與交流。</p>
+            <a class="card__link" href="forum.html">前往達人論壇</a>
+          </article>
+          <article class="card card--accent-green reveal">
+            <div class="card__media" aria-hidden="true"><img src="../img/unsplash/theme-vr.jpg" alt="" width="900" height="600" loading="lazy"></div>
+            <p class="card__eyebrow">06</p>
+            <h3 class="card__title">全民國防體驗</h3>
+            <p class="card__body">VR 模擬器、數位戰士、無人機飛行模擬器、機器狗等互動體驗。</p>
+          </article>
+          <article class="card card--accent-green reveal">
+            <div class="card__media" aria-hidden="true"><img src="../img/unsplash/theme-lock.jpg" alt="" width="900" height="600" loading="lazy"></div>
+            <p class="card__eyebrow">07</p>
+            <h3 class="card__title">資安體驗</h3>
+            <p class="card__body">資安攻防、數位鑑識、闖關遊戲與教育推廣，認識資安防護觀念。</p>
+          </article>
+          <article class="card card--accent-warm reveal">
+            <div class="card__media" aria-hidden="true"><img src="../img/unsplash/theme-expo.jpg" alt="" width="900" height="600" loading="lazy"></div>
+            <p class="card__eyebrow">08</p>
+            <h3 class="card__title">廠商陳展</h3>
+            <p class="card__body">技術展示、產學媒合、人才招募與商機交流的產業互動場域。</p>
+            <a class="card__link" href="sponsors.html">贊助與參展資訊</a>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- 正式視覺素材 -->
-    <section class="section section--alt" aria-labelledby="official-assets-title">
+    <!-- 活動時程（首頁錨點） -->
+    <section class="section" id="schedule" aria-labelledby="schedule-title">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="section-eyebrow">TIMELINE</p>
+          <h2 class="section-title" id="schedule-title">活動時程</h2>
+          <p class="section-lede">
+            期程依競賽辦法修正版（2026-08-06）；競賽公告日與細部賽制以主辦單位公告為準。
+          </p>
+        </header>
+
+        <div class="schedule-layout">
+          <div>
+            <ol class="timeline reveal">
+          <li class="timeline__item timeline__item--current">
+            <span class="timeline__dot" aria-hidden="true"></span>
+            <p class="timeline__date"><span class="tbd">待公告</span></p>
+            <h3 class="timeline__stage">競賽公告</h3>
+            <p class="timeline__desc">公布各競賽辦法、參賽資格與報名方式。</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__dot" aria-hidden="true"></span>
+            <p class="timeline__date">至 2026.09.05 – 10.21</p>
+            <h3 class="timeline__stage">報名開始／截止</h3>
+            <p class="timeline__desc">神盾盃至 9/5（SurveyCake）；國防 AI 競賽至 10/9、AI 研討會至 10/21（活動官網）；AI 飛行員截止日待公告。</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__dot" aria-hidden="true"></span>
+            <p class="timeline__date">2026.10.09 / 10.21</p>
+            <h3 class="timeline__stage">提案／作品繳交截止</h3>
+            <p class="timeline__desc">國防 AI 競賽書面資料至 10/9；AI 研討會模型提交至 10/21。</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__dot" aria-hidden="true"></span>
+            <p class="timeline__date">2026.09.17 – 10.21</p>
+            <h3 class="timeline__stage">初賽審查</h3>
+            <p class="timeline__desc">神盾盃資格賽 9/17–19 線上 57 小時；其餘由各主題提需單位驗測與書面審查。</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__dot" aria-hidden="true"></span>
+            <p class="timeline__date">2026.10.26</p>
+            <h3 class="timeline__stage">決賽名單公告</h3>
+            <p class="timeline__desc">國防 AI 競賽 10/26 公告晉級；其餘依各競賽公告。</p>
+          </li>
+          <li class="timeline__item timeline__item--deadline">
+            <span class="timeline__dot" aria-hidden="true"></span>
+            <p class="timeline__date" data-config="event.finalDateText">2026.11.07—08</p>
+            <h3 class="timeline__stage">決賽與成果展示</h3>
+            <p class="timeline__desc">於國立成功大學舉行決賽、成果展示、研討與體驗活動。</p>
+            <span class="timeline__status timeline__status--current">已確認</span>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__dot" aria-hidden="true"></span>
+            <p class="timeline__date">2026.11.08</p>
+            <h3 class="timeline__stage">頒獎</h3>
+            <p class="timeline__desc">公布得獎名單並舉行頒獎典禮。</p>
+          </li>
+        </ol>
+          </div>
+          <div class="schedule-side">
+          <div class="table-wrapper reveal" tabindex="0">
+          <table class="data-table">
+            <caption>
+              決賽當日程序 <span class="tag tag--draft">暫定</span>｜
+              決賽為 11/7–11/8 兩日、多競賽平行進行，整合總議程仍待主辦單位提供，本表僅為 0806 規劃之暫定示意。
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">時間</th>
+                <th scope="col">活動</th>
+                <th scope="col">地點</th>
+                <th scope="col">備註</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>08:30–09:00</td><td>參賽團隊報到</td><td>報到區</td><td>核對參賽資料</td></tr>
+              <tr><td>09:00–09:20</td><td>開幕式</td><td>主舞台</td><td>長官及貴賓致詞</td></tr>
+              <tr><td>09:30–12:00</td><td>決賽簡報／實機競賽</td><td>各競賽區</td><td>依組別進行</td></tr>
+              <tr><td>12:00–13:00</td><td>午餐及成果交流</td><td>展示區</td><td>參賽團隊交流</td></tr>
+              <tr><td>13:00–15:30</td><td>決賽及成果展示</td><td>各競賽區</td><td>評審評分</td></tr>
+              <tr><td>15:30–16:30</td><td>達人論壇／成果分享</td><td>主舞台</td><td>專題交流</td></tr>
+              <tr><td>16:30–17:00</td><td>頒獎及閉幕</td><td>主舞台</td><td>公布得獎名單</td></tr>
+            </tbody>
+          </table>
+          </div>
+            <div class="card__actions reveal" style="margin-block-start: var(--space-6);">
+            <a class="btn btn--secondary" href="../Files/2026-shield-cup-finals.ics" download>加入決賽行事曆（.ics）</a>
+            <span class="external-hint">行事曆檔目前僅含決賽兩日；各競賽報名與繳交期限以本頁期程為準。</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 決賽現場照片帶 -->
+    <section class="photo-band" aria-labelledby="venue-band-title">
+      <div class="photo-band__photo" aria-hidden="true">
+        <img src="../img/unsplash/ncku.jpg" alt="" width="1600" height="900" loading="lazy">
+      </div>
+      <div class="container photo-band__inner">
+        <div>
+          <p class="photo-band__eyebrow">FINALS VENUE</p>
+          <h2 class="photo-band__title" id="venue-band-title">決賽現場｜國立成功大學</h2>
+          <p class="photo-band__desc">2026.11.07—08 兩日決賽、成果展示、達人論壇與全民體驗活動同場展開。</p>
+        </div>
+        <div class="photo-band__actions">
+          <a class="btn btn--secondary-light" href="transport-contact.html">查看交通資訊</a>
+          <a class="btn btn--primary" href="register.html">馬上報名</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 最新消息 -->
+    <section class="section section--alt" aria-labelledby="news-title">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="section-eyebrow">NEWS</p>
+          <h2 class="section-title" id="news-title">最新消息</h2>
+        </header>
+
+        <ul class="news-list reveal">
+          <li class="news-item news-item--pinned">
+            <a class="news-item__link" href="news.html" aria-label="查看公告：2026 神盾盃活動資訊與決賽日期">
+              <span class="tag tag--pinned">置頂</span>
+              <time class="news-item__date" datetime="2026-11-07">2026.11.07—08</time>
+              <span class="news-item__title">2026 神盾盃活動資訊與決賽日期</span>
+              <span class="tag tag--info">公告</span>
+            </a>
+          </li>
+          <li class="news-item">
+            <a class="news-item__link" href="news.html" aria-label="查看公告：各競賽報名平台與時程待公告">
+              <time class="news-item__date" datetime="">待公告</time>
+              <span class="news-item__title">各競賽報名平台與時程（待公告）</span>
+              <span class="tag tag--urgent">競賽</span>
+            </a>
+          </li>
+          <li class="news-item">
+            <a class="news-item__link" href="news.html" aria-label="查看公告：達人論壇議程與講者待公告">
+              <time class="news-item__date" datetime="">待公告</time>
+              <span class="news-item__title">達人論壇議程與講者（待公告）</span>
+              <span class="tag tag--forum">論壇</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="card__actions reveal" style="margin-block-start: var(--space-6);">
+          <a class="btn btn--secondary" href="news.html">查看全部公告</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 邀請卡與宣傳海報 -->
+    <section class="section" aria-labelledby="official-assets-title">
       <div class="container">
         <header class="section-header reveal">
           <p class="section-eyebrow">OFFICIAL VISUALS</p>
           <h2 class="section-title" id="official-assets-title">邀請卡與宣傳海報</h2>
-          <p class="section-lede">網站視覺已延續正式邀請卡與海報的深藍、青綠、琥珀色及雷達任務語言。</p>
         </header>
 
         <div class="official-assets">
           <article class="official-asset reveal">
             <a class="official-asset__preview" href="../img/official-invitation.png" target="_blank" rel="noopener">
-              <img src="../img/official-invitation.png"
-                   alt="2026 神盾盃競賽評委與專題講者邀請卡"
-                   width="1080" height="1527" loading="lazy">
+              <img src="../img/official-invitation-thumb.jpg"
+                   alt="2026 神盾盃三款邀請函，目前預覽一般通用版"
+                   width="760" height="1073" loading="lazy">
             </a>
             <div class="official-asset__body">
               <div>
-                <p class="official-asset__eyebrow">VIP INVITATION</p>
-                <h3>評委與專題講者邀請卡</h3>
+                <p class="official-asset__eyebrow">THREE INVITATION STYLES</p>
+                <h3>三款邀請函（四份函稿）</h3>
               </div>
               <a class="btn btn--secondary-light" href="../img/official-invitation.png" download>下載邀請卡</a>
             </div>
@@ -271,9 +479,9 @@
 
           <article class="official-asset reveal">
             <a class="official-asset__preview" href="../img/official-poster.png" target="_blank" rel="noopener">
-              <img src="../img/official-poster.png"
+              <img src="../img/official-poster-thumb.jpg"
                    alt="2026 神盾盃國際邀請賽暨國防 AI 競賽宣傳海報"
-                   width="1080" height="1527" loading="lazy">
+                   width="760" height="600" loading="lazy">
             </a>
             <div class="official-asset__body">
               <div>
@@ -281,36 +489,42 @@
                 <h3>活動宣傳海報</h3>
               </div>
               <a class="btn btn--secondary-light" href="../img/official-poster.png" download>下載宣傳海報</a>
+              <p class="official-asset__note">海報上的獎金為早前規劃版本；總獎金以競賽辦法修正版 255 萬元為準，新版海報公告後替換。</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 宣傳影片 -->
-    <section class="section section--alt" aria-labelledby="video-title">
+    <!-- 合作單位 -->
+    <section class="section section--alt" aria-labelledby="org-title">
       <div class="container">
         <header class="section-header reveal">
-          <p class="section-eyebrow">VIDEO</p>
-          <h2 class="section-title" id="video-title">宣傳影片</h2>
-          <p class="section-lede">正式宣傳影片 <span class="tbd">待上架</span>，以下為版面示意。</p>
+          <p class="section-eyebrow">ORGANIZERS</p>
+          <h2 class="section-title" id="org-title">相關單位</h2>
+          <p class="section-lede">指導、合作與贊助單位名單、Logo 與排序待主辦單位確認後更新。</p>
         </header>
 
-        <div class="gallery-grid">
-          <article class="gallery-card reveal">
-            <a href="#" aria-label="播放宣傳影片（示意）">
-              <div class="gallery-card__media gallery-card__media--video">
-                <img src="../img/hero-wave.jpg" alt="" width="2400" height="1350" loading="lazy">
-                <span class="gallery-card__play" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                </span>
-              </div>
-            </a>
-            <div class="gallery-card__body">
-              <h3 class="gallery-card__title">活動宣傳影片（示意）</h3>
-              <p class="gallery-card__meta">正式影片上線後替換</p>
-            </div>
-          </article>
+        <ul class="unit-list reveal">
+          <li class="unit-item">
+            <span class="unit-item__role">主辦單位</span>
+            <span class="unit-item__name" data-config="organizers.host">國家中山科學研究院</span>
+          </li>
+          <li class="unit-item">
+            <span class="unit-item__role">協辦單位</span>
+            <span class="unit-item__name" data-config="organizers.coOrganizersText">財團法人資訊工業策進會、奧義科技股份有限公司、國家資通安全研究院、國立成功大學</span>
+          </li>
+          <li class="unit-item">
+            <span class="unit-item__role">指導／合作／贊助</span>
+            <span class="unit-item__name"><span class="tbd">名單待確認</span></span>
+          </li>
+        </ul>
+
+        <div class="logo-strip reveal" aria-label="單位 Logo">
+          <div class="logo-chip">
+            <span class="logo-chip__box"><img src="../img/brand/ncsist-ict.jpg" alt="中科院資訊通信研究所 Logo" width="984" height="1280" loading="lazy"></span>
+            <span class="logo-chip__label">中科院資通所</span>
+          </div>
         </div>
       </div>
     </section>
@@ -320,9 +534,9 @@
       <div class="container cta-band__inner">
         <div>
           <h2 class="cta-band__title" id="cta-title">準備好接下任務了嗎？</h2>
-          <p class="cta-band__desc">報名截止日 <span class="tbd">待公告</span>，完成報名以取得參賽資格。</p>
+          <p class="cta-band__desc">先閱讀競賽說明，再依各競賽指定平台完成報名。</p>
         </div>
-        <a class="btn btn--primary" href="portal.html#profile">報名參賽</a>
+        <a class="btn btn--primary" href="register.html">馬上報名</a>
       </div>
     </section>
   </main>
@@ -331,43 +545,51 @@
     <div class="container site-footer__inner">
       <div class="site-footer__brand">
         <a class="brand" href="index.html">
-          <span class="brand__mark" aria-hidden="true">AI</span>
+          <img class="brand__mark brand__mark--logo" src="../img/brand/shield.png" alt="" width="400" height="351">
           <span class="brand__text">
             <span>2026 神盾盃</span>
-            <small>主辦單位｜中山科學院</small>
+            <small>國際邀請賽暨國防 AI 競賽</small>
           </span>
         </a>
+        <p class="site-footer__units">
+          指導單位｜<span class="tbd">待確認</span><br>
+          主辦單位｜<span data-config="organizers.host">國家中山科學研究院</span><br>
+          協辦單位｜<span data-config="organizers.coOrganizersText">財團法人資訊工業策進會、奧義科技股份有限公司、國家資通安全研究院、國立成功大學</span>
+        </p>
       </div>
 
       <nav aria-label="頁尾選單">
         <h2>SITEMAP</h2>
         <ul>
           <li><a href="index.html">首頁</a></li>
-          <li><a href="about.html">活動介紹與辦法</a></li>
-          <li><a href="register.html">報名資訊</a></li>
-          <li><a href="news.html">公告與成果</a></li>
-          <li><a href="portal.html#profile">報名參賽</a></li>
+          <li><a href="competition.html">關於競賽</a></li>
+          <li><a href="forum.html">達人論壇</a></li>
+          <li><a href="register.html">馬上報名</a></li>
+          <li><a href="sponsors.html">贊助與參展</a></li>
+          <li><a href="transport-contact.html">交通與聯絡資訊</a></li>
+          <li><a href="news.html">最新消息</a></li>
         </ul>
       </nav>
 
       <div>
         <h2>CONTACT</h2>
         <ul>
-          <li>活動日期｜2026.11.07—08</li>
-          <li>決賽地點｜國立成功大學</li>
-          <li>聯絡窗口｜<span class="tbd">待公告</span></li>
+          <li>決賽日期｜<span data-config="event.finalDateText">2026.11.07—08</span></li>
+          <li>決賽地點｜<span data-config="event.finalVenue">國立成功大學</span></li>
+          <li><a href="transport-contact.html">交通資訊與聯絡窗口</a></li>
         </ul>
       </div>
     </div>
 
     <div class="container site-footer__bottom">
-      <p>© 2026 神盾盃國際邀請賽暨國防 AI 競賽。</p>
-      <p><a href="#">個資與網站使用說明</a>（正式內容 <span class="tbd">待公告</span>）</p>
+      <p>© 2026 神盾盃國際邀請賽暨國防 AI 競賽</p>
+      <p>網站更新日期｜<span data-config="event.siteUpdatedAt">2026-08-06</span></p>
     </div>
   </footer>
 
   <p id="demo-status" class="demo-status" role="status" aria-live="polite"></p>
 
+  <script src="../js/site-config.js"></script>
   <script src="../js/main.js"></script>
 </body>
 </html>

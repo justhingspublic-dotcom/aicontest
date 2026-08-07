@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="2026 神盾盃國際邀請賽暨國防 AI 競賽公告、活動內容、決賽成果與活動花絮。">
-  <title>公告與成果｜2026 神盾盃國際邀請賽暨國防 AI 競賽</title>
+  <title>最新消息｜2026 神盾盃國際邀請賽暨國防 AI 競賽</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
@@ -13,7 +16,7 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand" href="index.html">
-        <span class="brand__mark" aria-hidden="true">AI</span>
+        <img class="brand__mark brand__mark--logo" src="../img/brand/shield.png" alt="" width="400" height="351">
         <span class="brand__text">
           <span>2026 神盾盃</span>
           <small>國際邀請賽暨國防 AI 競賽</small>
@@ -32,12 +35,19 @@
 
       <nav class="site-nav" id="site-nav" aria-label="主選單">
         <ul class="site-nav__list">
-          <li><a class="site-nav__link" href="index.html">首頁</a></li>
-          <li><a class="site-nav__link" href="about.html">活動介紹與辦法</a></li>
-          <li><a class="site-nav__link" href="register.html">報名資訊</a></li>
-          <li><a class="site-nav__link" href="news.html" aria-current="page">公告與成果</a></li>
+          <li class="site-nav__item--has-sub">
+            <a class="site-nav__link" href="index.html">首頁<span class="site-nav__caret" aria-hidden="true">▾</span></a>
+            <ul class="site-nav__sub">
+              <li><a href="index.html#intro">活動介紹</a></li>
+              <li><a href="index.html#schedule">活動時程</a></li>
+            </ul>
+          </li>
+          <li><a class="site-nav__link" href="competition.html">關於競賽</a></li>
+          <li><a class="site-nav__link" href="forum.html">達人論壇</a></li>
+          <li><a class="site-nav__link" href="sponsors.html">贊助與參展</a></li>
+          <li><a class="site-nav__link" href="transport-contact.html">交通與聯絡資訊</a></li>
         </ul>
-        <a class="btn btn--primary btn--sm" href="portal.html#profile">報名參賽</a>
+        <a class="btn btn--primary btn--sm" href="register.html">馬上報名</a>
       </nav>
     </div>
   </header>
@@ -46,15 +56,13 @@
 
     <!-- 頁面標題 -->
     <section class="page-hero" aria-labelledby="page-title">
-      <div class="camo-strip" aria-hidden="true"></div>
-      <!-- 背景照片：銀河下的雷達天線（Unsplash 免費授權）＋深色遮罩 -->
       <div class="page-hero__photo" aria-hidden="true">
-        <img src="../img/satellite-dish.jpg" alt="" width="1920" height="1280" fetchpriority="high">
+        <img src="../img/unsplash/news.jpg" alt="" width="1600" height="1067" fetchpriority="high">
       </div>
       <div class="container page-hero__inner">
         <span class="page-hero__eyebrow">NEWS / GALLERY</span>
-        <h1 class="page-hero__title" id="page-title">公告與成果</h1>
-        <p class="page-hero__lede">活動公告、決賽資訊、成果展示與活動花絮，將依活動階段持續更新。</p>
+        <h1 class="page-hero__title" id="page-title">最新消息</h1>
+        <p class="page-hero__lede">重要公告、競賽、論壇、得獎公告與活動花絮，將依活動階段持續更新。</p>
       </div>
     </section>
 
@@ -170,7 +178,7 @@
           <h3 class="empty-state__title">成果尚未公開</h3>
           <p class="empty-state__desc">
             決賽作品與成果說明將於決賽結束後陸續發布，<br>
-            歡迎先至<a href="register.html">報名資訊</a>了解參賽方式。
+            歡迎先至<a href="register.html">馬上報名</a>了解參賽方式。
           </p>
         </div>
       </div>
@@ -183,7 +191,7 @@
           <h2 class="cta-band__title" id="cta-title">不錯過任何公告</h2>
           <p class="cta-band__desc">重要時程與審查結果都會在本頁發布，建議將本站加入書籤。</p>
         </div>
-        <a class="btn btn--primary" href="portal.html#profile">報名參賽</a>
+        <a class="btn btn--primary" href="register.html">馬上報名</a>
       </div>
     </section>
   </main>
@@ -192,43 +200,51 @@
     <div class="container site-footer__inner">
       <div class="site-footer__brand">
         <a class="brand" href="index.html">
-          <span class="brand__mark" aria-hidden="true">AI</span>
+          <img class="brand__mark brand__mark--logo" src="../img/brand/shield.png" alt="" width="400" height="351">
           <span class="brand__text">
             <span>2026 神盾盃</span>
-            <small>主辦單位｜中山科學院</small>
+            <small>國際邀請賽暨國防 AI 競賽</small>
           </span>
         </a>
+        <p class="site-footer__units">
+          指導單位｜<span class="tbd">待確認</span><br>
+          主辦單位｜<span data-config="organizers.host">國家中山科學研究院</span><br>
+          協辦單位｜<span data-config="organizers.coOrganizersText">財團法人資訊工業策進會、奧義科技股份有限公司、國家資通安全研究院、國立成功大學</span>
+        </p>
       </div>
 
       <nav aria-label="頁尾選單">
         <h2>SITEMAP</h2>
         <ul>
           <li><a href="index.html">首頁</a></li>
-          <li><a href="about.html">活動介紹與辦法</a></li>
-          <li><a href="register.html">報名資訊</a></li>
-          <li><a href="news.html">公告與成果</a></li>
-          <li><a href="portal.html#profile">報名參賽</a></li>
+          <li><a href="competition.html">關於競賽</a></li>
+          <li><a href="forum.html">達人論壇</a></li>
+          <li><a href="register.html">馬上報名</a></li>
+          <li><a href="sponsors.html">贊助與參展</a></li>
+          <li><a href="transport-contact.html">交通與聯絡資訊</a></li>
+          <li><a href="news.html">最新消息</a></li>
         </ul>
       </nav>
 
       <div>
         <h2>CONTACT</h2>
         <ul>
-          <li>活動日期｜2026.11.07—08</li>
-          <li>決賽地點｜國立成功大學</li>
-          <li>聯絡窗口｜<span class="tbd">待公告</span></li>
+          <li>決賽日期｜<span data-config="event.finalDateText">2026.11.07—08</span></li>
+          <li>決賽地點｜<span data-config="event.finalVenue">國立成功大學</span></li>
+          <li><a href="transport-contact.html">交通資訊與聯絡窗口</a></li>
         </ul>
       </div>
     </div>
 
     <div class="container site-footer__bottom">
-      <p>© 2026 神盾盃國際邀請賽暨國防 AI 競賽。</p>
-      <p><a href="#">個資與網站使用說明</a>（正式內容 <span class="tbd">待公告</span>）</p>
+      <p>© 2026 神盾盃國際邀請賽暨國防 AI 競賽</p>
+      <p>網站更新日期｜<span data-config="event.siteUpdatedAt">2026-08-06</span></p>
     </div>
   </footer>
 
   <p id="demo-status" class="demo-status" role="status" aria-live="polite"></p>
 
+  <script src="../js/site-config.js"></script>
   <script src="../js/main.js"></script>
 </body>
 </html>
