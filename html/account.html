@@ -50,63 +50,51 @@
   </header>
 
   <main id="main-content">
-    <section class="page-hero" aria-labelledby="page-title">
-      <div class="page-hero__photo" aria-hidden="true">
-        <img src="../img/unsplash/portal.jpg" alt="" width="1600" height="2400" fetchpriority="high">
-      </div>
-      <div class="container page-hero__inner">
-        <span class="page-hero__eyebrow">ACCOUNT</span>
-        <h1 class="page-hero__title" id="page-title">會員登入與註冊</h1>
-        <p class="page-hero__lede">
-          由活動官網報名之項目，需先註冊帳號；註冊完成後重新登入，
-          即可於參賽者專區進行報名、繳件與結果查詢。
-        </p>
-      </div>
-    </section>
+    <section class="section auth-section" aria-labelledby="page-title">
+      <div class="container">
+        <div class="auth-split">
+          <div class="auth-split__visual">
+            <img src="../img/unsplash/portal.jpg" alt="" width="1600" height="2400" fetchpriority="high">
+            <div class="auth-split__copy">
+              <span class="auth-split__eyebrow">ACCOUNT</span>
+              <h1 class="auth-split__title" id="page-title">會員登入與註冊</h1>
+              <p class="auth-split__lede">
+                由活動官網報名之項目，需先註冊帳號；註冊完成後重新登入，
+                即可進行報名、繳件與結果查詢。
+              </p>
+            </div>
+          </div>
 
-    <div class="tab-bar" data-tabs>
-      <div class="container tab-bar__inner" role="tablist" aria-label="登入或註冊">
-        <button class="tab" role="tab" id="tab-login" aria-selected="true" aria-controls="login" type="button">會員登入</button>
-        <button class="tab" role="tab" id="tab-signup" aria-selected="false" aria-controls="signup" type="button" tabindex="-1">註冊帳號</button>
-      </div>
-    </div>
+          <div class="auth-split__panel">
+            <div class="auth-seg" data-tabs role="tablist" aria-label="登入或註冊">
+              <button class="auth-seg__btn" role="tab" id="tab-login" aria-selected="true" aria-controls="login" type="button">會員登入</button>
+              <button class="auth-seg__btn" role="tab" id="tab-signup" aria-selected="false" aria-controls="signup" type="button" tabindex="-1">註冊帳號</button>
+            </div>
 
-    <section class="section" role="tabpanel" tabindex="0" id="login" aria-labelledby="tab-login">
-        <div class="container portal-layout">
-          <header class="portal-panel-heading">
-            <p class="section-eyebrow">MEMBER LOGIN</p>
-            <h2 class="section-title">會員登入</h2>
-            <p class="section-lede">
-              首次使用請先<button class="link-button" type="button" data-tab-jump="tab-signup">註冊帳號</button>；
-              評審委員與活動管理者帳號由主辦單位開通。
-            </p>
-          </header>
-
-          <div>
             <div class="portal-alert" id="account-alert" role="status" aria-live="polite" hidden></div>
 
-            <article class="portal-panel" id="account-session" hidden>
-              <h3>目前已登入</h3>
-              <p class="portal-note">帳號｜<strong id="account-session-email"></strong></p>
+            <article class="auth-session" id="account-session" hidden>
+              <h2>目前已登入</h2>
+              <p>帳號｜<strong id="account-session-email"></strong></p>
               <div class="form-actions">
                 <a class="btn btn--primary-light" href="portal.html#profile">前往參賽者專區</a>
                 <button class="btn btn--secondary" id="account-logout" type="button">登出</button>
               </div>
             </article>
 
-            <form class="portal-panel" id="login-form" novalidate>
-              <div class="form-grid">
-                <div class="field field--light form-grid__wide">
+            <div role="tabpanel" tabindex="0" id="login" aria-labelledby="tab-login">
+              <form class="auth-form" id="login-form" novalidate>
+                <div class="field field--light">
                   <label class="field__label" for="login-email">帳號（Email） <span class="required" aria-hidden="true">*</span></label>
                   <input class="field__input" id="login-email" name="email" type="email" autocomplete="username" inputmode="email" required>
                 </div>
 
-                <div class="field field--light form-grid__wide">
+                <div class="field field--light">
                   <label class="field__label" for="login-password">密碼 <span class="required" aria-hidden="true">*</span></label>
                   <input class="field__input" id="login-password" name="password" type="password" autocomplete="current-password" required>
                 </div>
 
-                <div class="field field--light form-grid__wide">
+                <div class="field field--light">
                   <label class="field__label" for="login-role">登入身分 <span class="required" aria-hidden="true">*</span></label>
                   <select class="field__input" id="login-role" name="role">
                     <option value="participant" selected>參賽者</option>
@@ -115,38 +103,15 @@
                   </select>
                   <p class="field__hint" id="login-role-hint">參賽者可自行註冊帳號；登入後於參賽者專區完成報名與繳件。</p>
                 </div>
-              </div>
 
-              <div class="form-actions">
                 <button class="btn btn--primary-light" type="submit">登入</button>
-                <span class="form-status" id="login-status" role="status" aria-live="polite"></span>
-              </div>
-            </form>
-
-            <div class="demo-notice" style="margin-block-start: var(--space-6);">
-              <div>
-                <strong>展示模式</strong>｜帳號僅保存於此瀏覽器本機並用於展示流程，請勿輸入真實密碼。
-                正式驗證機制（密碼政策、Email 驗證、忘記密碼）待主辦單位確認。
-              </div>
+                <p class="form-status" id="login-status" role="status" aria-live="polite"></p>
+              </form>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <section class="section" role="tabpanel" tabindex="0" id="signup" aria-labelledby="tab-signup" hidden>
-        <div class="container portal-layout">
-          <header class="portal-panel-heading">
-            <p class="section-eyebrow">SIGN UP</p>
-            <h2 class="section-title">註冊帳號</h2>
-            <p class="section-lede">
-              註冊完成後，請以剛建立的帳號重新登入；同一帳號可管理由官網報名之項目。
-            </p>
-          </header>
-
-          <div>
-            <form class="portal-panel" id="signup-form" novalidate>
-              <div class="form-grid">
-                <div class="field field--light form-grid__wide">
+            <div role="tabpanel" tabindex="0" id="signup" aria-labelledby="tab-signup" hidden>
+              <form class="auth-form" id="signup-form" novalidate>
+                <div class="field field--light">
                   <label class="field__label" for="signup-email">帳號（Email） <span class="required" aria-hidden="true">*</span></label>
                   <input class="field__input" id="signup-email" name="email" type="email" autocomplete="email" inputmode="email" required>
                   <p class="field__hint">報名、補件與審查結果通知將寄送至此信箱。</p>
@@ -161,28 +126,20 @@
                   <label class="field__label" for="signup-password-confirm">確認密碼 <span class="required" aria-hidden="true">*</span></label>
                   <input class="field__input" id="signup-password-confirm" name="passwordConfirm" type="password" autocomplete="new-password" required>
                 </div>
-              </div>
 
-              <label class="check-field" for="signup-consent">
-                <input id="signup-consent" name="signupConsent" type="checkbox" required>
-                <span>我已閱讀並同意網站服務條款與個人資料運用規範（正式條文以主辦公告為準）。</span>
-              </label>
+                <label class="check-field" for="signup-consent">
+                  <input id="signup-consent" name="signupConsent" type="checkbox" required>
+                  <span>我已閱讀並同意網站服務條款與個人資料運用規範（正式條文以主辦公告為準）。</span>
+                </label>
 
-              <div class="form-actions">
                 <button class="btn btn--primary-light" type="submit">建立帳號</button>
-                <span class="form-status" id="signup-status" role="status" aria-live="polite"></span>
-              </div>
-            </form>
-
-            <div class="demo-notice" style="margin-block-start: var(--space-6);">
-              <div>
-                <strong>展示模式</strong>｜密碼強度等正式規範待主辦單位確認，展示版不做強度驗證；
-                帳號僅保存於此瀏覽器本機，請勿使用真實密碼。
-              </div>
+                <p class="form-status" id="signup-status" role="status" aria-live="polite"></p>
+              </form>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">

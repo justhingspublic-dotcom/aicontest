@@ -198,7 +198,7 @@
 
         var role = roleSelect ? roleSelect.value : 'participant';
         if (role !== 'participant') {
-          loginStatus.textContent = '展示版提供參賽者流程；評審與管理者工作區屬後台系統建置範圍。';
+          loginStatus.textContent = '評審委員與活動管理者帳號由主辦單位開通，請由對應的後台系統登入。';
           return;
         }
 

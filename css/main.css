@@ -3253,3 +3253,160 @@ input[type="file"].field__input::file-selector-button:hover {
   font-size: 1.25rem;
   color: var(--color-text);
 }
+
+/* 會員登入頁：左圖（標題）右卡分割版型，無 page-hero */
+.auth-section {
+  padding-block: clamp(var(--space-8), 5vw, var(--space-16));
+}
+
+.auth-split {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  max-inline-size: 64rem;
+  margin-inline: auto;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-container);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.auth-split__visual {
+  position: relative;
+  display: flex;
+}
+
+.auth-split__visual img {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.auth-split__visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(165deg, rgba(10, 43, 77, 0.6), rgba(10, 43, 77, 0.9));
+}
+
+.auth-split__copy {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  padding: clamp(var(--space-6), 4vw, var(--space-12));
+  color: var(--color-text-on-dark);
+}
+
+.auth-split__eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  letter-spacing: 0.14em;
+  color: var(--color-cyan);
+  margin-block-end: var(--space-2);
+}
+
+.auth-split__title {
+  font-size: clamp(1.75rem, 2.6vw, 2.25rem);
+  line-height: 1.25;
+}
+
+.auth-split__lede {
+  margin-block-start: var(--space-4);
+  color: var(--color-text-muted-on-dark);
+  line-height: 1.75;
+}
+
+.auth-split__panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: clamp(var(--space-6), 4vw, var(--space-12));
+}
+
+/* 登入／註冊切換 segment（卡片上方） */
+.auth-seg {
+  display: flex;
+  gap: var(--space-1);
+  padding: var(--space-1);
+  background: var(--color-sky);
+  border-radius: var(--radius-pill);
+}
+
+.auth-seg__btn {
+  appearance: none;
+  border: 0;
+  background: none;
+  flex: 1;
+  min-block-size: 44px;
+  border-radius: var(--radius-pill);
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.auth-seg__btn:hover {
+  color: var(--color-text);
+}
+
+.auth-seg__btn[aria-selected="true"] {
+  background: var(--color-white);
+  color: var(--color-blue);
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+}
+
+.auth-seg__btn:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 2px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.auth-form .btn {
+  inline-size: 100%;
+  margin-block-start: var(--space-2);
+}
+
+.auth-form .form-status {
+  margin: 0;
+  text-align: center;
+}
+
+/* 已登入狀態卡 */
+.auth-session {
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+  padding: var(--space-6);
+}
+
+.auth-session h2 {
+  font-size: 1.125rem;
+  margin-block-end: var(--space-2);
+}
+
+.auth-session p {
+  color: var(--color-text-muted);
+  margin-block-end: var(--space-4);
+}
+
+@media (max-width: 47.9375rem) {
+  .auth-split {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-split__visual {
+    min-block-size: 12rem;
+  }
+}
